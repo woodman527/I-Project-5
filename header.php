@@ -12,7 +12,7 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,10 +23,14 @@
 </head>
 
 <body>
-    <div class="row">
+    <div class="page-header">
         <div class="col-md-8">
-            <img src="images/LogoWebsite.png">
+            <img src="images/LogoWebsite.png" width="200px" height="200px">
         </div>
         <div class="col-md-4">
+        </div>
+        <div class="col-md-12">
+            <a href="Index.php" class="button">Index</a>
+            <a href="About.php" class="button">Over Ons</a>
         </div>
     </div>
