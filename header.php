@@ -23,14 +23,14 @@
 </head>
 
 <body>
-    <div class="page-header">
+    <div class="row">
         <div class="col-md-8">
-            <img src="images/LogoWebsite.png" width="200px" height="200px">
+            <a href="Index.php"><img src="images/LogoWebsite.png" width="200px" height="200px"></a>
         </div>
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-12">
-            <a href="Index.php" class="button">Index</a>
-            <a href="About.php" class="button">Over Ons</a>
+    </div>
+    <div class="row">
+        <div class="navbar">
+            <a href="Index.php" class="navbar-btn">Index</a>
+            <a href="About.php" class="navbar-btn">Over Ons</a>
         </div>
     </div>
