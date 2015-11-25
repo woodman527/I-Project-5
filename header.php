@@ -50,8 +50,11 @@
     </div>
     <div class="row">
         <div class="navbar col-md-8">
-            <a href="Index.php" class="navbar-btn">Index</a>
-            <a href="About.php" class="navbar-btn">Over Ons</a>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="Index.php">Home</a></li>
+                <li><a href="Index.php">Over Ons</a></li>
+                <li><a href="Index.php">Producten</a></li>
+            </ul>
         </div>
     </div>
     </div>
