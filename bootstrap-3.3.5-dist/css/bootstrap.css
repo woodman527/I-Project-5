@@ -3406,6 +3406,7 @@ fieldset[disabled] .btn-warning.active {
 }
 .header{
   background-color: lightgray;
+  height: 210px;
 }
 .btn-danger:active,
 .btn-danger.active,
@@ -5549,6 +5550,14 @@ button.list-group-item-danger.active:focus {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: lightgray;
+}
+
 .panel > .list-group,
 .panel > .panel-collapse > .list-group {
   margin-bottom: 0;
