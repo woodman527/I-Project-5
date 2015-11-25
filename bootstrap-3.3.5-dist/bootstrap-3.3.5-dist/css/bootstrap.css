@@ -2572,6 +2572,9 @@ output {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
           box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
 }
+.login{
+  height: 150px;
+}
 .form-control::-moz-placeholder {
   color: #999;
   opacity: 1;
@@ -3123,7 +3126,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #58BD11;
   border-color: #2e6da4;
 }
 .btn-primary:focus,
@@ -3400,6 +3403,9 @@ fieldset[disabled] .btn-warning.active {
   color: #fff;
   background-color: #c9302c;
   border-color: #ac2925;
+}
+.header{
+  background-color: lightgray;
 }
 .btn-danger:active,
 .btn-danger.active,
@@ -4213,7 +4219,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  height: 50px;
+  height: 40px;
   margin-bottom: 20px;
   border: 3px solid black;
   background-color: #58BD11;
@@ -4516,6 +4522,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   height: 50px;
   font-size: 22px;
   font-color: black;
+  border-right: solid black 2px;
+  float: center;
 }
 .navbar-btn.btn-sm {
   margin-top: 10px;

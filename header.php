@@ -23,14 +23,35 @@
 </head>
 
 <body>
+    <div class="header">
     <div class="row">
-        <div class="col-md-8">
-            <a href="Index.php"><img src="images/LogoWebsite.png" width="200px" height="200px"></a>
+        <div class="col-md-3">
+            <a href="Index.php"><img src="images/LogoWebsitenotxt.png" width="200px" height="150px"></a>
+        </div>
+        <div class="col-md-6">
+            <h1>Eenmaal, Andermaal</h1>
+            <h2>Zo, verkocht</h2>
+        </div>
+        <div class="col-md-2">
+            <form class="login">
+                <h3>Inloggen</h3>
+                <label for="inputEmail" class="sr-only">E-mail</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail Adres" required autofocus>
+                <label for="inputPassword" class="sr-only">Wachtwoord</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Wachtwoord" required>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Onthoud mij
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+            </form>
         </div>
     </div>
     <div class="row">
-        <div class="navbar">
+        <div class="navbar col-md-8">
             <a href="Index.php" class="navbar-btn">Index</a>
             <a href="About.php" class="navbar-btn">Over Ons</a>
         </div>
+    </div>
     </div>
