@@ -1,6 +1,7 @@
 <?php
     include_once('header.php');
     include_once('footer.php');
+    include_once('sidebar.php');
 ?>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

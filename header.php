@@ -23,38 +23,81 @@
 </head>
 
 <body>
-    <div class="header">
+<div class="page-header">
     <div class="row">
-        <div class="col-md-3">
-            <a href="Index.php"><img src="images/LogoWebsitenotxt.png" width="200px" height="150px"></a>
+       
+        <div class="col-xs-8 col-md-10">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                <img class="media-object" src="Images/LogoWebsitenotxt.png" alt="..." width="150" height="104">
+                </a>
+            </div>
+                <h2 class="media-right media-middle media-heading"> Zo, verkocht! </h2>
+            </div>
+            
+    
+    <div class="col-xs-12 col-md-12">  
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">EenmaalAndermaal</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+          
+        <li><a href="#">Over ons</a></li>
+        <li><a href="#">Profiel</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Zoeken">
         </div>
-        <div class="col-md-6">
-            <h1>Eenmaal, Andermaal</h1>
-            <h2>Zo, verkocht</h2>
+        <button type="submit" class="btn btn-default">Zoek</button>
+      </form>
+        
+    </div><!-- /.navbar-collapse -->
+      
+  </div><!-- /.container-fluid -->
+</nav>
+                
+    </div>
+       
         </div>
-        <div class="col-md-2">
-            <form class="login">
-                <h3>Inloggen</h3>
-                <label for="inputEmail" class="sr-only">E-mail</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail Adres" required autofocus>
+       
+        <div class="col-xs-4 col-md-2">
+        <div class="col-xs-12 col-md-12">  
+            <form class="form-signin ">
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                 <label for="inputPassword" class="sr-only">Wachtwoord</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Wachtwoord" required>
-                <div class="checkbox">
+                <div class="checkbox ">
                     <label>
-                        <input type="checkbox" value="remember-me"> Onthoud mij
+                    <input type="checkbox" value="remember-me">Onthouden
                     </label>
+                    <a class="" href="#" >Registreren</a>    
                 </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
             </form>
         </div>
-    </div>
-    <div class="row">
-        <div class="navbar col-md-8">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="Index.php">Home</a></li>
-                <li><a href="Index.php">Over Ons</a></li>
-                <li><a href="Index.php">Producten</a></li>
-            </ul>
         </div>
+        
     </div>
+    
+        
     </div>
+</body>
+
+  
+</html>
