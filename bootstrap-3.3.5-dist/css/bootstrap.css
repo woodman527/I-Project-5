@@ -6823,4 +6823,15 @@ button.close {
     display: none !important;
   }
 }
+.inputfield{
+  display: inline;
+  float: left;
+}
+.content{
+  float: left;
+  width: 900px;
+  margin-right:5px;
+  background: white;
+  height:100%;
+}
 /*# sourceMappingURL=bootstrap.css.map */
