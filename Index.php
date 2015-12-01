@@ -9,6 +9,14 @@
 <script src="js/bootstrap.min.js"></script>
 
 <div class="content">
-    <h1>Test 123</h1>
-    <h2>Dit is de testtext van vandaag LOREM IPSUM DOLOR SIT AMET</h2>
+    <div class="row">
+        <div class="veilingitem">
+            <h3>Ikea Tafellamp (Zo goed als nieuw)</h3>
+            <img class="media-object" src="Images/voorbeeldlamp.JPG" alt="...">
+            <h4>Huidig bod: 22 Euro</h4>
+            <p>Hier komt een testitem te staan inclusief afbeelding en link naar een uitgebreide beschrijving, deze beschrijving
+            moet hoe lang hij ook is, steeds onder de afbeelding blijven staan en niet van het shcerm af lopen. anders gaat alles kapot
+            en moet bart huilen.</p>
+        </div>
+    </div>
 </div>
