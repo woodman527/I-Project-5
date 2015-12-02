@@ -11,17 +11,17 @@
 </head>
 
 <body>
-<div class="row">
+<div cl4ass="row">
 <div class="col-md-12"> 
     <form class="form-horizontal" action='' method="POST">
   <fieldset>
     <div id="legend">
-      <legend class="">Register</legend>
+      <legend class="">Registeren</legend>
     </div>
       <div class="col-md-2">
     <div class="control-group">
       <!-- Username -->
-      <label class="control-label"  for="username">Gebruikersnaam</label>
+      <label class="control-label"  for="username">Gebruikersnaam:</label>
       <div class="controls">
         <input type="text" id="username" name="username" placeholder="Gebruikersnaam" class="form-control">
       </div>
@@ -29,7 +29,7 @@
  
     <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="email">E-mail</label>
+      <label class="control-label" for="email">E-mail:</label>
       <div class="controls">
         <input type="text" id="email" name="email" placeholder="e@mail.nl" class="form-control">
       </div>
@@ -37,7 +37,7 @@
  
     <div class="control-group">
       <!-- Password-->
-      <label class="control-label" for="password">Wachtwoord</label>
+      <label class="control-label" for="password">Wachtwoord:</label>
       <div class="controls">
         <input type="password" id="password" name="password" placeholder="******" class="form-control">
       </div>
@@ -55,14 +55,14 @@
     
     <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="voornaam">Voornaam</label>
+      <label class="control-label" for="voornaam">Voornaam:</label>
       <div class="controls">
         <input type="text" id="voornaam" name="voornaam" placeholder="voornaam" class="form-control">
       </div>  
     
       <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="achternaam">Achternaam</label>
+      <label class="control-label" for="achternaam">Achternaam:</label>
       <div class="controls">
         <input type="text" id="achternaam" name="achternaam" placeholder="achternaam" class="form-control">
       </div>
@@ -70,7 +70,7 @@
     </div>
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="achternaam">Adres</label>
+      <label class="control-label" for="achternaam">Adres:</label>
       <div class="controls">
         <input type="text" id="adres" name="adres" placeholder="adres" class="form-control">
       </div>
@@ -78,14 +78,14 @@
           
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="woonplaats">Woonplaats</label>
+      <label class="control-label" for="woonplaats">Woonplaats:</label>
       <div class="controls">
         <input type="text" id="woonplaats" name="woonplaats" placeholder="woonplaats" class="form-control">
       </div>
     </div>
-    </div>
+  
       
-    <div class="col-md-2">
+   
         <div class="control-group">
       <!-- E-mail -->
       <label class="control-label" for="Postcode">Postcode:</label>
@@ -348,7 +348,8 @@
 <option value="Zimbabwe">Zimbabwe</option>
 </select>
     </div>
-       
+      </div>
+      <div class="col-md-2">
          <div class="control-group">
       <!-- E-mail -->
       <label class="control-label" for="Telefoonnummer1">Telefoonnummer 1:</label>
@@ -364,10 +365,6 @@
       </div>
     </div>
          
-      </div>
-      
-      
-      <div class="col-md-2">
           <div class="control-group">
       <!-- E-mail -->
       <label class="control-label" for="Telefoonnummer3">Telefoonnummer 3:</label>
@@ -375,6 +372,8 @@
         <input type="text" id="Telefoonnummer3" name="Telefoonnummer3" placeholder="Telefoonnummer 3" class="form-control">
       </div>
     </div>
+      </div>
+      <div class="col-md-2">
           <div class="control-group">
       <!-- E-mail -->
       <label class="control-label" for="land">Geheime vraag:</label>
@@ -395,10 +394,9 @@
       </div>
       </div>
           
-          
           <div class="control-group">
       <!-- Button -->
-    <label class="control-label" for="registreren">Klik om u te registreren</label>
+    <label class="control-label" for="registreren">Klik hier om u te registreren</label>
       <div class="controls">
         <button class="btn btn-success form-control" >Registreren</button>
       </div>
@@ -406,8 +404,6 @@
       </div>
   </fieldset>
 </form>
-    
-    
     </div>
     </div>
 </body>
