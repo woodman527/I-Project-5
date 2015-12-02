@@ -28,9 +28,9 @@
        
         <div class="col-xs-8 col-md-10">
         <div class="media">
-            <div class="media-left">
+            <div class="media-right">
                 <a href="#">
-                <img class="media-object" src="Images/LogoWebsitenotxt.png" alt="..." width="150" height="104">
+                <img class="media-object img-responsive" src="Images/LogoWebsitenotxt.png" alt="Logo" width="127" height="104">
                 </a>
             </div>
                 <h2 class="media-right media-middle media-heading"> Zo, verkocht! </h2>

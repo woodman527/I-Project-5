@@ -23,7 +23,21 @@ if (typeof jQuery === 'undefined') {
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
+$(function(){
 
+	$('#slide-submenu').on('click',function() {			        
+        $(this).closest('.list-group').fadeOut('slide',function(){
+        	$('.mini-submenu').fadeIn();	
+        });
+        
+      });
+
+	$('.mini-submenu').on('click',function(){		
+        $(this).next('.list-group').toggle('slide');
+        $('.mini-submenu').hide();
+	})
+})
+//functies shizzle 
 
 +function ($) {
   'use strict';
