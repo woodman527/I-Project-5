@@ -58,6 +58,7 @@
           
         <li><a href="#">Over ons</a></li>
         <li><a href="#">Profiel</a></li>
+          <li><a href="voorbeeldvoorwerp.php">Voorbeeld Voorwerp</a></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">

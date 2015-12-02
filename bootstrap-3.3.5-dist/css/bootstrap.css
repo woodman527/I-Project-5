@@ -6835,3 +6835,33 @@ button.close {
   height:100%;
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+/*eigen CSS*/
+
+.veilingitem{
+  border-bottom: dotted black 2px;
+  margin: 10px;
+  height: 300px;
+  padding: 5px;
+  background-color: lightgray;
+}
+
+.veilingitem img{
+  border: black solid 2px;
+  width: 150px;
+  height: 100px;
+}
+
+.veilingitem p {
+  float: right;
+}
+
+.product img {
+  border: solid black 2px;
+  width: 250px;
+  height: 250px;
+}
+
+.content {
+  margin: 10px;
+}
