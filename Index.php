@@ -13,6 +13,7 @@
         <div class="veilingitem">
             <h3>Ikea Tafellamp (Zo goed als nieuw)</h3>
             <img class="media-object" src="Images/voorbeeldlamp.JPG" alt="...">
+            <a class="button" href="voorbeeldvoorwerp.php">Bied Mee</a>
             <h4>Huidig bod: 22 Euro</h4>
             <p>Hier komt een testitem te staan inclusief afbeelding en link naar een uitgebreide beschrijving, deze beschrijving
             moet hoe lang hij ook is, steeds onder de afbeelding blijven staan en niet van het shcerm af lopen. anders gaat alles kapot

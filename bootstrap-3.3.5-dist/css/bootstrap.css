@@ -6841,7 +6841,7 @@ button.close {
 .veilingitem{
   border-bottom: dotted black 2px;
   margin: 10px;
-  height: 250px;
+  height: 300px;
   padding: 5px;
   background-color: lightgray;
 }
@@ -6854,4 +6854,14 @@ button.close {
 
 .veilingitem p {
   float: right;
+}
+
+.product img {
+  border: solid black 2px;
+  width: 250px;
+  height: 250px;
+}
+
+.content {
+  margin: 10px;
 }
