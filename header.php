@@ -25,7 +25,7 @@
 <body>
 <div class="page-header">
     <div class="row">
-       
+
         <div class="col-xs-8 col-md-10">
         <div class="media">
             <div class="media-right">
@@ -35,9 +35,9 @@
             </div>
                 <h2 class="media-right media-middle media-heading"> Zo, verkocht! </h2>
             </div>
-            
-    
-    <div class="col-xs-12 col-md-12">  
+
+
+    <div class="col-xs-12 col-md-12">
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -54,8 +54,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        
-          
+
+
         <li><a href="#">Over ons</a></li>
         <li><a href="#">Profiel</a></li>
           <li><a href="voorbeeldvoorwerp.php">Voorbeeld Voorwerp</a></li>
@@ -66,18 +66,18 @@
         </div>
         <button type="submit" class="btn btn-default">Zoek</button>
       </form>
-        
+
     </div><!-- /.navbar-collapse -->
-      
+
   </div><!-- /.container-fluid -->
 </nav>
-                
+
     </div>
-       
+
         </div>
-       
+
         <div class="col-xs-4 col-md-2">
-        <div class="col-xs-12 col-md-12">  
+        <div class="col-xs-12 col-md-12">
             <form class="form-signin ">
                 <label for="inputEmail" class="sr-only">Email address</label>
                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -87,18 +87,18 @@
                     <label>
                     <input type="checkbox" value="remember-me">Onthouden
                     </label>
-                    <a class="" href="#" >Registreren</a>    
+                    <a class="" href="#" >Registreren</a>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
             </form>
         </div>
         </div>
-        
+
     </div>
-    
-        
+
+
     </div>
 </body>
 
-  
+
 </html>

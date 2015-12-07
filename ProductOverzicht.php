@@ -32,7 +32,7 @@
     </div>
     <div class="row">
         <div class="veilingitem">
-            <h3>Honda kankermooi</h3>
+            <h3>Honda supermooi</h3>
             <img class="media-object" src="Images/VoorbeeldAuto3.jpg" alt="...">
             <h4>Huidig bod: 22 Euro</h4>
             <p>Hier komt een testitem te staan inclusief afbeelding en link naar een uitgebreide beschrijving, deze beschrijving
@@ -42,7 +42,7 @@
     </div>
     <div class="row">
         <div class="veilingitem">
-            <h3>Eendje mijn reetje</h3>
+            <h3>Eendje</h3>
             <img class="media-object" src="Images/VoorbeeldAuto4.jpg" alt="...">
             <h4>Huidig bod: 22 Euro</h4>
             <p>Hier komt een testitem te staan inclusief afbeelding en link naar een uitgebreide beschrijving, deze beschrijving
