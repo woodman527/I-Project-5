@@ -29,7 +29,7 @@
         <div class="col-xs-8 col-md-10">
         <div class="media">
             <div class="media-right">
-                <a href="#">
+                <a href="Index.php">
                 <img class="media-object img-responsive" src="Images/LogoWebsitenotxt.png" alt="Logo" width="127" height="104">
                 </a>
             </div>
@@ -48,7 +48,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">EenmaalAndermaal</a>
+      <a class="navbar-brand" href="Index.php">EenmaalAndermaal</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,8 +56,8 @@
       <ul class="nav navbar-nav">
 
 
-        <li><a href="#">Over ons</a></li>
-        <li><a href="#">Profiel</a></li>
+        <li><a href="OverOns.php">Over ons</a></li>
+        <li><a href="mijnprofiel.php">Profiel</a></li>
           <li><a href="voorbeeldvoorwerp.php">Voorbeeld Voorwerp</a></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
@@ -87,7 +87,7 @@
                     <label>
                     <input type="checkbox" value="remember-me">Onthouden
                     </label>
-                    <a class="" href="#" >Registreren</a>
+                    <a class="" href="Registreren.php" >Registreren</a>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
             </form>
