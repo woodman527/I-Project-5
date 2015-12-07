@@ -18,6 +18,7 @@
     <h1 class="Overons">
       Over ons
     </h1>
+    <div class="row">
     <div class="title">
       iConcepts
     </div>
@@ -29,6 +30,8 @@
     <div class="Image">
       <img src="Images/AntonMijnder.jpg" alt="AntonMijnder">
     </div>
+  </div>
+  <div class="row">
     <div class="title">
       Routebeschrijving
     </div>
@@ -38,6 +41,7 @@
     <div class="Image">
       <img src="Images/Map.png" alt="Kaart">
     </div>
+  </div>
 
   </div>
 
