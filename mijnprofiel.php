@@ -27,7 +27,7 @@
         <div class="col-md-11">
             <form class="form-horizontal" action='' method="POST">
                 <fieldset>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="control-group">
                             <!-- Username -->
                             <label class="control-label"  for="username">Gebruikersnaam:</label>
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
 
                         <div class="control-group">
                             <!-- E-mail -->
@@ -358,7 +358,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="control-group">
                             <!-- E-mail -->
                             <label class="control-label" for="Telefoonnummer1">Telefoonnummer 1:</label>
@@ -381,15 +381,31 @@
                                 <input type="text" id="Telefoonnummer3" name="Telefoonnummer3" placeholder="Telefoonnummer 3" class="form-control">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
+                   
                         <div class="control-group">
                             <!-- Button -->
-                            <label class="control-label" for="registreren">Klik hier om wijzigingen op te slaan</label>
+                            <label class="control-label" for="registreren">Wijzigingen opslaan:</label>
                             <div class="controls">
                                 <button class="btn btn-success form-control" >Opslaan</button>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="control-group">
+                            <!-- Button -->
+                            <label class="control-label" for="Verkoopacc">Verkoopaccount aanmaken:</label>
+                            <div class="controls">
+                                <button class="btn btn-success form-control"><a href="registrerenVerkoper.php">Aanmaken</a></button>
+                            </div>
+                            
+                            <div class="control-group">
+                            <!-- Button -->
+                            <label class="control-label" for="Veilen">Aanmaken veiling:</label>
+                            <div class="controls">
+                                <button class="btn btn-success form-control"><a href="VoorwerpVeilen.php">Aanmaken</a></button>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </fieldset>
             </form>
