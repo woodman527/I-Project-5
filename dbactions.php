@@ -110,4 +110,4 @@ function database_queryColumn($sql, $params, $col)
 
     return $result;
 }
-?>
+

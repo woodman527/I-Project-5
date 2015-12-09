@@ -60,11 +60,11 @@
         <li><a href="mijnprofiel.php">Profiel</a></li>
           <li><a href="voorbeeldvoorwerp.php">Voorbeeld Voorwerp</a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" role="search" method="post" action="zoekresultaten.php">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Zoeken">
         </div>
-        <button type="submit" class="btn btn-default">Zoek</button>
+        <button type="submit" class="btn btn-default" name="zoek">Zoek</button>
       </form>
 
     </div><!-- /.navbar-collapse -->
