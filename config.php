@@ -2,6 +2,6 @@
 <?php
     global $db_host, $db_connectionInfo;
 
-    $db_host = '(local)';
-    $db_connectionInfo = array('Database' => 'WEBSHOP', 'UID' => 'Bartwebdevs', 'PWD' => 'ikikik1', 'CharacterSet' => 'UTF-8');
+    $db_host = '(local)\sqlexpress';
+    $db_connectionInfo = array('Database' => 'EenmaalAndermaal', 'UID' => 'sa', 'PWD' => 'wachtwoord', 'CharacterSet' => 'UTF-8');
 ?>
