@@ -13,7 +13,7 @@
 <body>
 <div class="row">
 <div class="col-md-12">
-    <form class="form-horizontal" action='' method="POST">
+    <form class="form-horizontal" action='RegistreerActie.php' method="POST">
   <fieldset>
     <div id="legend">
       <legend class="">Register</legend>
@@ -70,11 +70,22 @@
     </div>
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="achternaam">Adres</label>
+      <label class="control-label" for="adres">Adres</label>
       <div class="controls">
         <input type="text" id="adres" name="adres" placeholder="adres" class="form-control">
       </div>
     </div>
+
+        <div class="control-group">
+          <!-- E-mail -->
+          <label class="control-label" for="adres2">Adres</label>
+          <div class="controls">
+            <input type="text" id="adres2" name="adres2" placeholder="adres2" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
 
           <div class="control-group">
       <!-- E-mail -->
@@ -83,21 +94,21 @@
         <input type="text" id="woonplaats" name="woonplaats" placeholder="woonplaats" class="form-control">
       </div>
     </div>
-    </div>
 
-    <div class="col-md-2">
+
+
         <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="Postcode">Postcode:</label>
+      <label class="control-label" for="postcode">Postcode:</label>
       <div class="controls">
-        <input type="text" id="Postcode" name="Postcode" placeholder="Postcode" class="form-control">
+        <input type="text" id="Postcode" name="postcode" placeholder="Postcode" class="form-control">
       </div>
     </div>
 
         <div class="control-group">
       <!-- E-mail -->
       <label class="control-label" for="land">Land:</label>
-      <select class="form-control" name="Land">
+      <select class="form-control" name="land">
 <option value="">Land...</option>
 <option value="Netherlands">Netherlands (Holland, Europe)</option>
 <option value="Afganistan">Afghanistan</option>
@@ -349,36 +360,49 @@
 </select>
     </div>
 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="geboortedatum">Geboortedatum</label>
+      <div class="controls">
+        <input type="text" id="geboortedatum" name="geboortedatum" placeholder="01-01-2015" class="form-control">
+      </div>
+    </div>
+  </div>
+
+
+        <div class="col-md-2">
+
          <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="Telefoonnummer1">Telefoonnummer 1:</label>
+      <label class="control-label" for="telefoonnummer1">Telefoonnummer 1:</label>
       <div class="controls">
-        <input type="text" id="Telefoonnummer1" name="Telefoonnummer1" placeholder="Telefoonnummer 1" class="form-control">
+        <input type="text" id="telefoonnummer1" name="telefoonnummer1" placeholder="telefoonnummer 1" class="form-control">
       </div>
     </div>
          <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="Telefoonnummer2">Telefoonnummer 2:</label>
+      <label class="control-label" for="telefoonnummer2">Telefoonnummer 2:</label>
       <div class="controls">
-        <input type="text" id="Telefoonnummer2" name="Telefoonnummer2" placeholder="Telefoonnummer 2" class="form-control">
+        <input type="text" id="telefoonnummer2" name="telefoonnummer2" placeholder="telefoonnummer 2" class="form-control">
       </div>
     </div>
 
-      </div>
-
-
-      <div class="col-md-2">
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="Telefoonnummer3">Telefoonnummer 3:</label>
+      <label class="control-label" for="telefoonnummer3">Telefoonnummer 3:</label>
       <div class="controls">
-        <input type="text" id="Telefoonnummer3" name="Telefoonnummer3" placeholder="Telefoonnummer 3" class="form-control">
+        <input type="text" id="telefoonnummer3" name="telefoonnummer3" placeholder="telefoonnummer 3" class="form-control">
       </div>
     </div>
+
+    </div>
+
+    <div class="col-md-2">
+
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="land">Geheime vraag:</label>
-      <select class="form-control" name="Land">
+      <label class="control-label" for="geheimevraag">Geheime vraag:</label>
+      <select class="form-control" name="geheimevraag">
 <option value="">Geheime vraag...</option>
 <option value="Moeder">Hoe heet je moeder?</option>
 <option value="Basisschool">Op welke basisschool zat je?</option>
@@ -389,9 +413,9 @@
 
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="antGeheimeVraag">Antwoord:</label>
+      <label class="control-label" for="antgeheimevraag">Antwoord:</label>
       <div class="controls">
-        <input type="text" id="antGeheimeVraag" name="antGeheimeVraag" placeholder="Antwoord" class="form-control">
+        <input type="text" id="antgeheimevraag" name="antgeheimevraag" placeholder="Antwoord" class="form-control">
       </div>
       </div>
 

@@ -1,5 +1,6 @@
 <?php
     include('dbactions.php');
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -78,9 +79,9 @@
 
         <div class="col-xs-4 col-md-2">
         <div class="col-xs-12 col-md-12">
-            <form class="form-signin ">
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <form class="form-signin" action="Login.php">
+                <label for="inputGebruikersnaam" class="sr-only">Gebruikersnaam</label>
+                <input type="gebruikersnaam" id="inputGebruikersnaam" class="form-control" placeholder="Gebruikersnaam" required autofocus>
                 <label for="inputPassword" class="sr-only">Wachtwoord</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Wachtwoord" required>
                 <div class="checkbox ">
