@@ -88,7 +88,7 @@
                     <label>
                     <input type="checkbox" value="remember-me">Onthouden
                     </label>
-                    <a class="" href="Registreren.php" >Registreren</a>
+                    <a class="" href="Registreren.php">Registreren</a>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
             </form>

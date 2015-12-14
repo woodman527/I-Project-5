@@ -3132,19 +3132,19 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #286090;
+  background-color: #58BD11;
   border-color: #122b40;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #286090;
+  background-color: #58BD11;
   border-color: #204d74;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #286090;
+  background-color: #58BD11;
   border-color: #204d74;
 }
 .btn-primary:active:hover,
@@ -3183,11 +3183,11 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #337ab7;
+  background-color: #58BD11;
   border-color: #2e6da4;
 }
 .btn-primary .badge {
-  color: #337ab7;
+  color: #58BD11;
   background-color: #fff;
 }
 .btn-success {
@@ -6844,7 +6844,8 @@ button.close {
   margin: 10px;
   height: 300px;
   padding: 5px;
-  background-color: lightgray;
+  background-color: #8EE352;
+  border-radius: 5px;
 }
 
 .veilingitem img{
@@ -6856,7 +6857,7 @@ button.close {
 .veilingitem p {
   float: right;
 }
-<<<<<<< HEAD
+
 .Overons{
   text-align: left;
   font-weight: bold;
@@ -6907,6 +6908,10 @@ button.close {
   border: solid black 2px;
   width: 250px;
   height: 250px;
+}
+
+.loginbutton{
+  background-color: #8EE352;
 }
 
 .form-control-groot {
