@@ -30,6 +30,7 @@
     $land = $_POST['land'];
     $looptijdbegindag = date("d-M-Y");
     $looptijdbegintijdstip = date("h-i-s");
+    $afbeelding1 = $_POST['filetoupload1'];
 
 
     if(strlen($titel) > 18 OR !preg_match("/^[a-zA-Z_ -]*$/", $titel) OR $titel == null) {
@@ -65,14 +66,18 @@
     else {
     $vsql = "INSERT INTO VOORWERP(GEBRUIKERSNAAM, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
              VALUES ('Testlars', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
+//bij deze twee moet een select statement komen dat het voorwerpnummer bepaalt (tip: Gebruik max van de laatste inserted)
+    $afbsql = "INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)
+             VALUES ('$afbeelding1', 1)";
+//rubrieknummer is afhankelijk van de variabele rubriek, ook hier moet een select statement voor komen
+    $rubsql = "INSERT INTO VOORWERPINRUBRIEK (RUBRIEKNUMMER, VOORWERPNUMMER)
+             VALUES (1, 1)";
 
-    if (database_query($vsql, null)) {
+    if (database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null)) {
            echo 'gelukt';
-
         }
     else {
            echo 'error';
-
          }
 }
 

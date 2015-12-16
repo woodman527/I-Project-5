@@ -23,7 +23,7 @@
       <!-- titel -->
       <label class="control-label"  for="titel"> Titel Voorwerp</label>
       <div class="controls">
-        <input type="text" id="titel" name="titel" placeholder="titel" class="form-control">
+        <input type="text" id="titel" name="titel" placeholder="titel" class="form-control" enctype="multipart/form-data">
       </div>
     </div>
     <div class="control-group">
@@ -363,7 +363,36 @@
 <option value="Zimbabwe">Zimbabwe</option>
 </select>
 </div>
+</div>
 
+  <div class="col-md-3">
+    <div class="control-group">
+      <label class="control-label" for="Afbeelding 1">Afbeelding 1</label>
+      <div class="controls">
+        <input type="file" name="fileToUpload1" id="filetoupload1">
+  </div>
+</div>
+  <div class="control-group">
+    <label class="control-label" for="Afbeelding 2">Afbeelding 2</label>
+    <div class="controls">
+      <input type="file" name="fileToUpload2" id="filetoupload2">
+    </div>
+  </div>
+        <div class="control-group">
+     <label class="control-label" for="Afbeelding 3">Afbeelding 3</label>
+     <div class="controls">
+      <input type="file" name="fileToUpload3" id="filetoupload3">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="Afbeelding 4">Afbeelding 4</label>
+    <div class="controls">
+      <input type="file" name="fileToUpload4" id="filetoupload4">
+    </div>
+  </div>
+</div>
+
+<div class="col-md-2">
 
   <div class="control-group">
 <!-- Button -->
@@ -372,7 +401,7 @@
 <button class="btn btn-success form-control" >Veilen</button>
 </div>
 </div>
-</div>
+
 
 
   </div>
@@ -384,47 +413,11 @@
     </div>
 
 
-<div class="row">
-  <div class="col-md-12">
-        <form class="form-horizontal" action='upload.php' method="POST" enctype="multipart/form-data">
-      <fieldset>
-        <div id="legend">
-          <legend class="">Afbeelding uploaden</legend>
-        </div>
-        <div class="col-md-3">
-          <div class="control-group">
-        <label class="control-label" for="Afbeelding 1">Afbeelding 1</label>
-        <div class="controls">
-         <input type="file" name="fileToUpload" id="filetoupload">
-         <input type="submit" value="Upload Image" name="submit">
-      </div>
-    </div>
-          <div class="control-group">
-       <label class="control-label" for="Afbeelding 2">Afbeelding 2</label>
-       <div class="controls">
-         <input type="file" name="fileToUpload" id="filetoupload">
-         <input type="submit" value="Upload Image" name="submit">
-       </div>
-     </div>
-   </div>
-    <div class="col-md-3">
-          <div class="control-group">
-       <label class="control-label" for="Afbeelding 3">Afbeelding 3</label>
-       <div class="controls">
-        <input type="file" name="fileToUpload" id="filetoupload">
-        <input type="submit" value="Upload Image" name="submit">
-      </div>
-    </div>
-          <div class="control-group">
-       <label class="control-label" for="Afbeelding 4">Afbeelding 4</label>
-       <div class="controls">
-         <input type="file" name="fileToUpload" id="filetoupload">
-         <input type="submit" value="Upload Image" name="submit">
-       </div>
-     </div>
+
+
     </fieldset>
   </form>
-</div>
+
 </div>
 
 </body>
