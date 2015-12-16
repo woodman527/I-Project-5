@@ -26,7 +26,7 @@
     if (strlen($IBAN) > 18 OR !preg_match("/^[a-zA-Z0-9]*$/", $IBAN) ){
       echo "fout in IBAN";
     }
-    else if(strlen($Creditcard) > 16 OR !preg_match("/^[0-9]*$/", $Creditcard )) {
+    else if(strlen($Creditcard) > 20 OR !preg_match("/^[0-9]*$/", $Creditcard )) {
       echo "fout in Creditcard";
     }
     else {

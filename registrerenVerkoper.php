@@ -62,7 +62,7 @@
                     <!-- Iban -->
                     <label class="control-label" for="Creditcard">Creditcard</label>
                     <div class="controls">
-                    <input type="text" id="Creditcard" name="Creditcard" placeholder="Creditcard" class="form-control">
+                    <input type="text" id="Creditcard" name="Creditcard" placeholder="1234-1234-1234-1234" class="form-control">
                     </div>
                 </div>
               </div>
