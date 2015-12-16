@@ -13,7 +13,7 @@
 <body>
 <div class="row">
 <div class="col-md-12">
-    <form class="form-horizontal" action='' method="POST">
+    <form class="form-horizontal" action='VoorwerpVeilenActie.php' method="POST">
   <fieldset>
     <div id="legend">
       <legend class="">Voorwerp Veilen</legend>

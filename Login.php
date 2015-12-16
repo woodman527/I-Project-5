@@ -38,8 +38,9 @@ echo '<div class="content">';
 
 }
 
-
+<?php
 database_disconnect();
 ?>
 
 </body>
+  

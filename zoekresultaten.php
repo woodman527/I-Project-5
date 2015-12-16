@@ -4,12 +4,12 @@
     if(!isset($_POST['zoek'])){
         header("Location:index.php");
     }
-    $search_sql="SELECT * FROM Voorwerp WHERE titel LIKE '%".$_POST['zoek']."%' OR WHERE beschrijving LIKE '%".$_POST['zoek']."%'";
-    $search_query=mysqli_query($search_sql);
+    $search_mysqli="SELECT * FROM Voorwerp WHERE titel LIKE '%".$_POST['zoek']."%' OR WHERE beschrijving LIKE '%".$_POST['zoek']."%'";
+    $search_query=mysqli_query($search_mysqli, null);
     if(mysqli_num_rows($search_query)!=0) {
         $search_rs = mysqli_fetch_assoc($search_query);
     }
-}
+
 ?>
 
 
