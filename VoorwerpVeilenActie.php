@@ -31,6 +31,9 @@
     $looptijdbegindag = date("d-M-Y");
     $looptijdbegintijdstip = date("h-i-s");
     $afbeelding1 = $_POST['filetoupload1'];
+    $afbeelding2 = $_POST['filetoupload2'];
+    $afbeelding3 = $_POST['filetoupload3'];
+    $afbeelding4 = $_POST['filetoupload4'];
 
 
     if(strlen($titel) > 18 OR !preg_match("/^[a-zA-Z_ -]*$/", $titel) OR $titel == null) {
@@ -51,29 +54,34 @@
     else if(!preg_match("/^[0-9]*$/", $looptijd) OR $looptijd == null ) {
       echo 'error in looptijd';
     }
-    if(strlen($beschrijving) > 100 OR !preg_match("/^[a-zA-Z_ -]*$/", $beschrijving) OR $beschrijving == null) {
+    else if(strlen($beschrijving) > 100 OR !preg_match("/^[a-zA-Z_ -]*$/", $beschrijving) OR $beschrijving == null) {
       echo 'error in beschrijving';
     }
-    if(strlen($verzendinstructie) > 27 OR !preg_match("/^[a-zA-Z_ -]*$/", $verzendinstructie) ) {
+    else if(strlen($verzendinstructie) > 27 OR !preg_match("/^[a-zA-Z_ -]*$/", $verzendinstructie) ) {
       echo 'error in verzendinstructie';
     }
-    if(strlen($voorwerplokatie) > 60 OR !preg_match("/^[a-zA-Z_ -]*$/", $voorwerplokatie) OR $voorwerplokatie == null) {
+    else if(strlen($voorwerplokatie) > 60 OR !preg_match("/^[a-zA-Z_ -]*$/", $voorwerplokatie) OR $voorwerplokatie == null) {
       echo 'error in voorwerplokatie';
     }
-    else if($land == null) {
-      echo 'error in land';
+    else if($afbeelding1 == null AND $afbeelding2 == null AND $afbeelding3 == null AND $afbeelding4 == null) {
+      echo 'error in afbeelding';
     }
     else {
     $vsql = "INSERT INTO VOORWERP(GEBRUIKERSNAAM, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
-             VALUES ('Testlars', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
-//bij deze twee moet een select statement komen dat het voorwerpnummer bepaalt (tip: Gebruik max van de laatste inserted)
-    $afbsql = "INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)
-             VALUES ('$afbeelding1', 1)";
-//rubrieknummer is afhankelijk van de variabele rubriek, ook hier moet een select statement voor komen
-    $rubsql = "INSERT INTO VOORWERPINRUBRIEK (RUBRIEKNUMMER, VOORWERPNUMMER)
-             VALUES (1, 1)";
+             //VALUES ('Testlars', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
 
-    if (database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null)) {
+
+$afbsql =  "INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)
+           VALUES ('$afbeelding1', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
+           VALUES ('$afbeelding2', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
+           VALUES ('$afbeelding3', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
+           VALUES ('$afbeelding4', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)) ";
+
+
+    $rubsql = "INSERT INTO VOORWERPINRUBRIEK (RUBRIEKNUMMER, VOORWERPNUMMER)
+             VALUES ((SELECT RUBRIEKNUMMER FROM RUBRIEK WHERE RUBRIEKNAAM = '$rubriek'), (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP))";
+//database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null)
+    if (database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null) ) {
            echo 'gelukt';
         }
     else {

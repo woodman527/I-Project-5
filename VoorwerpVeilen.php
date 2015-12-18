@@ -369,25 +369,25 @@
     <div class="control-group">
       <label class="control-label" for="Afbeelding 1">Afbeelding 1</label>
       <div class="controls">
-        <input type="file" name="fileToUpload1" id="filetoupload1">
+        <input type="file" name="filetoupload1" id="filetoupload1">
   </div>
 </div>
   <div class="control-group">
     <label class="control-label" for="Afbeelding 2">Afbeelding 2</label>
     <div class="controls">
-      <input type="file" name="fileToUpload2" id="filetoupload2">
+      <input type="file" name="filetoupload2" id="filetoupload2">
     </div>
   </div>
         <div class="control-group">
      <label class="control-label" for="Afbeelding 3">Afbeelding 3</label>
      <div class="controls">
-      <input type="file" name="fileToUpload3" id="filetoupload3">
+      <input type="file" name="filetoupload3" id="filetoupload3">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="Afbeelding 4">Afbeelding 4</label>
     <div class="controls">
-      <input type="file" name="fileToUpload4" id="filetoupload4">
+      <input type="file" name="filetoupload4" id="filetoupload4">
     </div>
   </div>
 </div>
