@@ -35,8 +35,8 @@
       <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -46,17 +46,17 @@
         <entry file="file://$PROJECT_DIR$/mijnprofiel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.269231">
-              <caret line="387" column="29" selection-start-line="387" selection-start-column="29" selection-end-line="387" selection-end-column="29" />
+              <caret line="416" column="21" selection-start-line="416" selection-start-column="21" selection-end-line="416" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46815833">
-              <caret line="62" column="100" selection-start-line="62" selection-start-column="100" selection-end-line="62" selection-end-column="100" />
+            <state vertical-scroll-proportion="-19.615385">
+              <caret line="91" column="63" selection-start-line="91" selection-start-column="63" selection-end-line="91" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -65,21 +65,21 @@
       <file leaf-file-name="zoekresultaten.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zoekresultaten.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+            <state vertical-scroll-proportion="-3.9230769">
+              <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
               <folding>
-                <marker date="1449656571280" expanded="true" signature="153:195" placeholder="SELECT * FRO..Voorwerp..." />
-                <marker date="1449656571280" expanded="true" signature="153:265" placeholder="SELECT * FRO..Voorwerp..." />
+                <marker date="1449663875003" expanded="true" signature="153:195" placeholder="SELECT * FRO..Voorwerp..." />
+                <marker date="1449663875003" expanded="true" signature="153:265" placeholder="SELECT * FRO..Voorwerp..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bootstrap-3.3.5-dist/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.551724">
-              <caret line="6237" column="11" selection-start-line="6237" selection-start-column="11" selection-end-line="6237" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.37205082">
+              <caret line="6847" column="21" selection-start-line="6847" selection-start-column="21" selection-end-line="6847" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -111,10 +111,10 @@
         <option value="$PROJECT_DIR$/mijnprofiel.php" />
         <option value="$PROJECT_DIR$/Index.php" />
         <option value="$PROJECT_DIR$/voorbeeldvoorwerp.php" />
-        <option value="$PROJECT_DIR$/bootstrap-3.3.5-dist/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/dbactions.php" />
-        <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/zoekresultaten.php" />
+        <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/bootstrap-3.3.5-dist/css/bootstrap.css" />
       </list>
     </option>
   </component>
@@ -220,7 +220,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -355,14 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/voorbeeldvoorwerp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.73077">
-          <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Webshop2015/WebDevs-BP2/productview.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.76992756">
@@ -416,26 +408,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mijnprofiel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.269231">
-          <caret line="387" column="29" selection-start-line="387" selection-start-column="29" selection-end-line="387" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap-3.3.5-dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.551724">
-          <caret line="6237" column="11" selection-start-line="6237" selection-start-column="11" selection-end-line="6237" selection-end-column="11" />
+          <caret line="416" column="21" selection-start-line="416" selection-start-column="21" selection-end-line="416" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -448,21 +424,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/voorbeeldvoorwerp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.73077">
+          <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/zoekresultaten.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
           <folding>
-            <marker date="1449656571280" expanded="true" signature="153:195" placeholder="SELECT * FRO..Voorwerp..." />
-            <marker date="1449656571280" expanded="true" signature="153:265" placeholder="SELECT * FRO..Voorwerp..." />
+            <marker date="1449663875003" expanded="true" signature="153:195" placeholder="SELECT * FRO..Voorwerp..." />
+            <marker date="1449663875003" expanded="true" signature="153:265" placeholder="SELECT * FRO..Voorwerp..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46815833">
-          <caret line="62" column="100" selection-start-line="62" selection-start-column="100" selection-end-line="62" selection-end-column="100" />
+        <state vertical-scroll-proportion="-19.615385">
+          <caret line="91" column="63" selection-start-line="91" selection-start-column="63" selection-end-line="91" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap-3.3.5-dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37205082">
+          <caret line="6847" column="21" selection-start-line="6847" selection-start-column="21" selection-end-line="6847" selection-end-column="21" />
           <folding />
         </state>
       </provider>

@@ -396,7 +396,7 @@
                             <div class="controls">
                                 <button class="btn btn-success form-control"><a href="registrerenVerkoper.php">Aanmaken</a></button>
                             </div>
-                            
+
                             <div class="control-group">
                             <!-- Button -->
                             <label class="control-label" for="Veilen">Aanmaken veiling:</label>
@@ -428,4 +428,3 @@
         </div>
     </div>
     </div>
-

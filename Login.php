@@ -4,6 +4,7 @@ if(!isset($_SESSION)) {
         session_start(); 
     } 
 
+<<<<<<< HEAD
 include_once 'dbactions.php';
 database_connect();
 			
@@ -54,3 +55,31 @@ database_connect();
 			database_disconnect();
 		?>
 
+=======
+$sql = "SELECT * FROM GEBRUIKER WHERE GEBRUIKERSNAAM = '$username'
+AND WACHTWOORD = '$password'";
+$result = sqlsrv_query($conn, $sql);
+
+
+
+echo '<div class="content">';
+  if (!$result) {
+    echo "sorry, u bent niet geregistreerd";
+  }
+  else {
+    echo "Welkom $username";
+    $_SESSION['username'] = $username;
+
+  }
+  ?>
+</div>
+
+}
+
+<?php
+database_disconnect();
+?>
+
+</body>
+  
+>>>>>>> origin/master

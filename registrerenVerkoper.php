@@ -12,16 +12,16 @@
 
 <body>
 <div cl4ass="row">
-<div class="col-md-12"> 
-    <form class="form-horizontal" action='' method="POST">
+<div class="col-md-12">
+    <form class="form-horizontal" action='RegistrerenVerkoperActie.php' method="POST">
         <fieldset>
-            
+
             <div id="legend">
             <legend class="">Verkoop registratie</legend>
             </div>
-            
+
             <div class="col-md-2">
-                
+
                 <div class="control-group">
                     <!-- Bank -->
                     <label class="control-label"  for="Bank">Selecteer uw bank:</label>
@@ -36,7 +36,7 @@
                             <option value="AEGON Bank">AEGON Bank</option>
                         </select>
                 </div>
-     
+
                 <div class="control-group">
                     <!-- Iban -->
                     <label class="control-label" for="IBAN">IBAN (rekeningnummer):</label>
@@ -45,18 +45,29 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-2">
-                
+
                 <!-- Controle optie -->
                 <div class="control-group">
-                    <label class="control-label"  for="Bank">Controle optie:</label>
+                    <label class="control-label"  for="CtrOptie">Controleoptie:</label>
                         <select class="form-control" name="CtrOptie">
                             <option value="">Optie...</option>
-                            <option value="Post">Via de post</option>
-                            <option value="E-mail">Via de e-mail</option>
+                            <option value="Post">Post</option>
+                            <option value="Creditcard">Creditcard</option>
                         </select>
                 </div>
+
+                <div class="control-group">
+                    <!-- Iban -->
+                    <label class="control-label" for="Creditcard">Creditcard</label>
+                    <div class="controls">
+                    <input type="text" id="Creditcard" name="Creditcard" placeholder="1234-1234-1234-1234" class="form-control">
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-md-2">
 
                 <div class="control-group">
                     <!-- Button -->
@@ -64,8 +75,8 @@
                     <div class="controls">
                     <button class="btn btn-success form-control" >Registreren</button>
                     </div>
-                </div> 
-            
+                </div>
+
             </div>
         </fieldset>
     </form>

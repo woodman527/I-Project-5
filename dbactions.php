@@ -110,8 +110,5 @@ function database_queryColumn($sql, $params, $col)
 
     return $result;
 }
-<<<<<<< HEAD
-?>
-=======
 
->>>>>>> 85f68ed5ad32d8526d61fdbddfea9ac4a3f8c9b7
+?>

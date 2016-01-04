@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+<?php
+    include('dbactions.php');
+    
+?>
+
+>>>>>>> origin/master
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,11 +82,16 @@
 
         <div class="col-xs-4 col-md-2">
         <div class="col-xs-12 col-md-12">
+<<<<<<< HEAD
             
             <?php include 'Login.php'?>
             <?php if($_SESSION['logged'] == false) { ?>
             
                 <form class="form-signin" method="post">
+=======
+            <form class="form-signin" action="Login.php">
+
+>>>>>>> origin/master
                 <label for="inputGebruikersnaam" class="sr-only">Gebruikersnaam</label>
                 <input type="input" id="inputGebruikersnaam" class="form-control" name="username" placeholder="Gebruikersnaam" required autofocus>
                 <label for="inputPassword" class="sr-only">Wachtwoord</label>
@@ -87,7 +100,7 @@
                     <label>
                     <input type="checkbox" value="remember-me">Onthouden
                     </label>
-                    <a class="" href="Registreren.php" >Registreren</a>
+                    <a class="" href="Registreren.php">Registreren</a>
                 </div>
                 <input class="btn btn-lg btn-primary btn-block" type="submit" name="doLogin">Login</button>
                     <div id="melding"><?php echo $message; ?></div>
