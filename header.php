@@ -1,8 +1,3 @@
-<?php
-    include('dbactions.php');
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +9,8 @@
 
     <!-- Bootstrap -->
     <link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
-
+    <link href="css/css.css" rel="stylesheet">
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,7 +22,6 @@
 <body>
 <div class="page-header">
     <div class="row">
-
         <div class="col-xs-8 col-md-10">
         <div class="media">
             <div class="media-right">
@@ -39,7 +34,7 @@
 
 
     <div class="col-xs-12 col-md-12">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" id="navbarColor">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -79,19 +74,36 @@
 
         <div class="col-xs-4 col-md-2">
         <div class="col-xs-12 col-md-12">
-            <form class="form-signin" action="Login.php">
+            
+            <?php include 'Login.php'?>
+            <?php if($_SESSION['logged'] == false) { ?>
+            
+                <form class="form-signin" method="post">
                 <label for="inputGebruikersnaam" class="sr-only">Gebruikersnaam</label>
-                <input type="gebruikersnaam" id="inputGebruikersnaam" class="form-control" placeholder="Gebruikersnaam" required autofocus>
+                <input type="input" id="inputGebruikersnaam" class="form-control" name="username" placeholder="Gebruikersnaam" required autofocus>
                 <label for="inputPassword" class="sr-only">Wachtwoord</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Wachtwoord" required>
-                <div class="checkbox ">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Wachtwoord" name="password" required>
+                <div class="checkbox">
                     <label>
                     <input type="checkbox" value="remember-me">Onthouden
                     </label>
                     <a class="" href="Registreren.php" >Registreren</a>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                <input class="btn btn-lg btn-primary btn-block" type="submit" name="doLogin">Login</button>
+                    <div id="melding"><?php echo $message; ?></div>
+                   
             </form>
+             <?php } 
+            
+             else { ?>
+                <div>
+                    <?php echo $message; ?>
+                    <form method="post"> 
+                	<!-- Link naar pagina voor Mijn Profiel -->   	
+                	<a href="#">Profiel</a> &nbsp;|&nbsp; <button type="submit" name="logoff">Log Uit</button></li>
+                </form>	
+                </div>
+            <?php } ?>
         </div>
         </div>
 
