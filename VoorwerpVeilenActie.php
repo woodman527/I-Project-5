@@ -70,17 +70,25 @@
              VALUES ('Testlars', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
 
 
-$afbsql =  "INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)
-           VALUES ('$afbeelding1', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
-           VALUES ('$afbeelding2', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
-           VALUES ('$afbeelding3', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
-           VALUES ('$afbeelding4', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)) ";
+$afbsql =  "INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)";
+if ($afbeelding1 != null) {
+   $afbsql += "VALUES ('$afbeelding1', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),";
+}
+else if ($afbeelding2 != null) {
+   $afbsql += "VALUES ('$afbeelding2', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),";
+}
+else if ($afbeelding3 != null) {
+   $afbsql += "VALUES ('$afbeelding3', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),";
+}
+else if ($afbeelding4 != null) {
+   $afbsql += "VALUES ('$afbeelding4', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP))";
+}
 
 
     $rubsql = "INSERT INTO VOORWERPINRUBRIEK (RUBRIEKNUMMER, VOORWERPNUMMER)
              VALUES ((SELECT RUBRIEKNUMMER FROM RUBRIEK WHERE RUBRIEKNAAM = '$rubriek'), (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP))";
 //database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null)
-    if (database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null) ) {
+    if (database_query($afbsql, null)) ) {
            echo 'gelukt';
         }
     else {
