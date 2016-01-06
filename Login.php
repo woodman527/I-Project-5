@@ -4,11 +4,6 @@ if(!isset($_SESSION)) {
         session_start();
     }
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 include_once 'dbactions.php';
 database_connect();
 
@@ -27,11 +22,10 @@ database_connect();
           $password = $_POST['password'];
 
 
-          $sql = "SELECT GEBRUIKERSNAAM, WACHTWOORD FROM GEBRUIKER WHERE GEBRUIKERSNAAM = '$username' AND PASSWORD = '$password'";
+          $sql = "SELECT GEBRUIKERSNAAM, WACHTWOORD FROM GEBRUIKER WHERE GEBRUIKERSNAAM = '$username' AND WACHTWOORD = '$password'";
 
     			$result = sqlsrv_query($conn, $sql);
-
-
+                    
 					while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
 
 						if ($result) {
@@ -63,36 +57,9 @@ database_connect();
 				$message = "You Have Successfully Logged Out";
 				$_SESSION['logged'] = false;
 			}
-<<<<<<< HEAD
-			
-		?>
-<?php
-echo '<div class="content">';
-  if (!$result) {
-    echo "sorry, u bent niet geregistreerd";
-  }
-  else {
-      $username="";
-      $_SESSION['username'] = $username;
-    echo "Welkom $username";
-  }
-=======
-
-
-
->>>>>>> origin/master
-  ?>
-
-</div>
-
-
-<?php
 database_disconnect();
-?>
+		?>
+
 
 </body>
-<<<<<<< HEAD
-  
 
-=======
->>>>>>> origin/master
