@@ -1,11 +1,11 @@
-<<<<<<< HEAD
-=======
+
+
 <?php
     include('dbactions.php');
-    
+
 ?>
 
->>>>>>> origin/master
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +18,7 @@
     <!-- Bootstrap -->
     <link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
     <link href="css/css.css" rel="stylesheet">
-    
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -82,16 +82,16 @@
 
         <div class="col-xs-4 col-md-2">
         <div class="col-xs-12 col-md-12">
-<<<<<<< HEAD
-            
+
+
             <?php include 'Login.php'?>
             <?php if($_SESSION['logged'] == false) { ?>
-            
+
                 <form class="form-signin" method="post">
-=======
+
             <form class="form-signin" action="Login.php">
 
->>>>>>> origin/master
+
                 <label for="inputGebruikersnaam" class="sr-only">Gebruikersnaam</label>
                 <input type="input" id="inputGebruikersnaam" class="form-control" name="username" placeholder="Gebruikersnaam" required autofocus>
                 <label for="inputPassword" class="sr-only">Wachtwoord</label>
@@ -104,17 +104,17 @@
                 </div>
                 <input class="btn btn-lg btn-primary btn-block" type="submit" name="doLogin">Login</button>
                     <div id="melding"><?php echo $message; ?></div>
-                   
+
             </form>
-             <?php } 
-            
+             <?php }
+
              else { ?>
                 <div>
                     <?php echo $message; ?>
-                    <form method="post"> 
-                	<!-- Link naar pagina voor Mijn Profiel -->   	
+                    <form method="post">
+                	<!-- Link naar pagina voor Mijn Profiel -->
                 	<a href="#">Profiel</a> &nbsp;|&nbsp; <button type="submit" name="logoff">Log Uit</button></li>
-                </form>	
+                </form>
                 </div>
             <?php } ?>
         </div>
