@@ -404,9 +404,10 @@
       <label class="control-label" for="geheimevraag">Geheime vraag:</label>
       <select class="form-control" name="geheimevraag">
 <option value="">Geheime vraag...</option>
-<option value="Moeder">Hoe heet je moeder?</option>
-<option value="Basisschool">Op welke basisschool zat je?</option>
-<option value="Huisdier">Wat was de naam van je eerste huisdier?</option>
+<option value="1">Wat is de meisjesnaam van je moeder?</option>
+<option value="2">Wat was de naam van je eerste huisdier?</option>
+<option value="3">Wat was je allereerste knuffel?</option>
+<option value="4">Wat was het huisnummer van je allereerste huis?</option>
 
 </select>
     </div>

@@ -19,7 +19,7 @@
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $password_confirm = $_POST['password_confirm'];
+    $password_confirm = $_POST['password'];
     $voornaam = $_POST['voornaam'];
     $achternaam = $_POST['achternaam'];
     $adres = $_POST['adres'];
@@ -34,6 +34,10 @@
     $geheimevraag = $_POST['geheimevraag'];
     $antgeheimevraag = $_POST['antgeheimevraag'];
 
+      hash('adler32', $password);
+      hash('adler32', $password_confirm);
+      
+      
     if(strlen($username) > 10 OR !preg_match("/^[a-zA-Z0-9]*$/", $username) ) {
       echo 'Fout in gebruikersnaam';
     }
@@ -81,9 +85,10 @@
     }
     else {
       $sql = "INSERT INTO GEBRUIKER (GEBRUIKERSNAAM, VRAAG, VOORNAAM, ACHTERNAAM, ADRESREGEL1, ADRESREGEL2, POSTCODE, PLAATSNAAM, LAND, GEBOORTEDAG, MAILBOX, WACHTWOORD, ANTWOORDTEKST, VERKOPER)
-      VALUES ('$username', 1, '$voornaam', '$achternaam', '$adres', '$adres2', '$postcode', '$woonplaats', '$land', '$geboortedatum', '$email', '$password', '$antgeheimevraag', 'Niet')";
+      VALUES ('$username', '$geheimevraag', '$voornaam', '$achternaam', '$adres', '$adres2', '$postcode', '$woonplaats', '$land', '$geboortedatum', '$email', '$password', '$antgeheimevraag', 'Niet')";
       if (database_query($sql, null)) {
         echo 'gelukt';
+        echo hash('adler32', $password);
       }
       else {
         echo 'error';

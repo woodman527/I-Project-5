@@ -11,12 +11,11 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <?php
+   
+    <?php
   database_connect();
-
-
+    
   if($_SERVER['REQUEST_METHOD'] == "POST") {
-
 
     $titel = $_POST['titel'];
     $rubriek = $_POST['rubriek'];
@@ -35,7 +34,7 @@
     $afbeelding3 = $_POST['filetoupload3'];
     $afbeelding4 = $_POST['filetoupload4'];
 
-
+      
     if(strlen($titel) > 18 OR !preg_match("/^[a-zA-Z_ -]*$/", $titel) OR $titel == null) {
       echo 'error in titel';
     }
@@ -68,7 +67,7 @@
     }
     else {
     $vsql = "INSERT INTO VOORWERP(GEBRUIKERSNAAM, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
-             //VALUES ('Testlars', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
+             VALUES ('Testlars', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
 
 
 $afbsql =  "INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)

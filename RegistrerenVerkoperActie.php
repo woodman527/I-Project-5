@@ -13,7 +13,8 @@
 <body>
   <?php
   database_connect();
-  //$gebruikersnaam = $_SESSION['username'];
+  
+    $gebruikersnaam = $_SESSION['username'];
 
   if($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -31,7 +32,7 @@
     }
     else {
       $rvasql = "INSERT INTO VERKOPER (GEBRUIKERSNAAM, BANK, BANKREKENING, CONTROLEOPTIE, CREDITCARD)
-      VALUES ('Baalski', '$Bank', '$IBAN', '$CtrOptie', '$Creditcard')";
+      VALUES ('$gebruikersnaam', '$Bank', '$IBAN', '$CtrOptie', '$Creditcard')";
       if (database_query($rvasql, null)) {
         echo 'gelukt';
       }
