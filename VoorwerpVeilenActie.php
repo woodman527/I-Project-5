@@ -11,10 +11,10 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-   
+
     <?php
   database_connect();
-    
+
   if($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $titel = $_POST['titel'];
@@ -33,8 +33,9 @@
     $afbeelding2 = $_POST['filetoupload2'];
     $afbeelding3 = $_POST['filetoupload3'];
     $afbeelding4 = $_POST['filetoupload4'];
+    echo $afbeelding1;
 
-      
+
     if(strlen($titel) > 18 OR !preg_match("/^[a-zA-Z_ -]*$/", $titel) OR $titel == null) {
       echo 'error in titel';
     }
@@ -66,29 +67,20 @@
       echo 'error in afbeelding';
     }
     else {
-    $vsql = "INSERT INTO VOORWERP(GEBRUIKERSNAAM, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
-             VALUES ('Testlars', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
+    //$vsql = "INSERT INTO VOORWERP(GEBRUIKERSNAAM, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
+             //VALUES ('Testlars', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
 
 
-$afbsql =  "INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)";
-if ($afbeelding1 != null) {
-   $afbsql += "VALUES ('$afbeelding1', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),";
-}
-else if ($afbeelding2 != null) {
-   $afbsql += "VALUES ('$afbeelding2', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),";
-}
-else if ($afbeelding3 != null) {
-   $afbsql += "VALUES ('$afbeelding3', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),";
-}
-else if ($afbeelding4 != null) {
-   $afbsql += "VALUES ('$afbeelding4', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP))";
-}
-
+   $afbsql ="INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)
+              VALUES ('$afbeelding1', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
+                     ('$afbeelding2', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
+                     ('$afbeelding3', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
+                     ('$afbeelding4', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP))";
 
     $rubsql = "INSERT INTO VOORWERPINRUBRIEK (RUBRIEKNUMMER, VOORWERPNUMMER)
              VALUES ((SELECT RUBRIEKNUMMER FROM RUBRIEK WHERE RUBRIEKNAAM = '$rubriek'), (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP))";
 //database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null)
-    if (database_query($afbsql, null)) ) {
+    if (database_query($afbsql, null))  {
            echo 'gelukt';
         }
     else {

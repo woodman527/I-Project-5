@@ -5,11 +5,8 @@ if(!isset($_SESSION)) {
     }
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
-include_once 'dbactions.php';
+include_once ('dbactions.php');
 database_connect();
 
 
@@ -63,27 +60,8 @@ database_connect();
 				$message = "You Have Successfully Logged Out";
 				$_SESSION['logged'] = false;
 			}
-<<<<<<< HEAD
-			
+
 		?>
-<?php
-echo '<div class="content">';
-  if (!$result) {
-    echo "sorry, u bent niet geregistreerd";
-  }
-  else {
-      $username="";
-      $_SESSION['username'] = $username;
-    echo "Welkom $username";
-  }
-=======
-
-
-
->>>>>>> origin/master
-  ?>
-
-</div>
 
 
 <?php
@@ -91,8 +69,3 @@ database_disconnect();
 ?>
 
 </body>
-<<<<<<< HEAD
-  
-
-=======
->>>>>>> origin/master
