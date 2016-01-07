@@ -1,6 +1,8 @@
 
 <?php
     include_once('dbactions.php');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -79,10 +81,11 @@
 
         <div class="col-xs-4 col-md-2">
         <div class="col-xs-12 col-md-12">
+
             <?php include 'Login.php'?>
             <?php if($_SESSION['logged'] == false) { ?>
 
-                <form class="form-signin" method="post">
+            <form class="form-signin" method="post">
 
             <form class="form-signin" action="Login.php">
 

@@ -6,7 +6,9 @@ if(!isset($_SESSION)) {
 
 
 
+
 include_once ('dbactions.php');
+
 database_connect();
 
 
@@ -24,10 +26,9 @@ database_connect();
           $password = $_POST['password'];
 
 
-          $sql = "SELECT GEBRUIKERSNAAM, WACHTWOORD FROM GEBRUIKER WHERE GEBRUIKERSNAAM = '$username' AND PASSWORD = '$password'";
+          $sql = "SELECT GEBRUIKERSNAAM, WACHTWOORD FROM GEBRUIKER WHERE GEBRUIKERSNAAM = '$username' AND WACHTWOORD = '$password'";
 
     			$result = sqlsrv_query($conn, $sql);
-
 
 					while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
 
@@ -61,11 +62,16 @@ database_connect();
 				$_SESSION['logged'] = false;
 			}
 
+
 		?>
 
 
+
+
+</body>
 <?php
 database_disconnect();
-?>
+		?>
+
 
 </body>
