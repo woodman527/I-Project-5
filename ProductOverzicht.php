@@ -1,16 +1,16 @@
 <?php
     include_once('header.php');
     include_once('footer.php');
-    include 'sidebartest.php';
+    include_once ('sidebartest.php');
     include_once ('dbactions.php');
     database_connect();
     ?>
     <head>
-    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-          <link href="css/sidebar.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
 
@@ -19,7 +19,7 @@
       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php">Titel Oplopend</a></li>
+          <li><a href="http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php"x>Titel Oplopend</a></li>
           <li><a href="http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php">Titel aflopend</a></li>
         </ul>
       </div>
@@ -30,13 +30,14 @@
       $rubrieknummer = intval($_GET['productoverzicht']);
 
     if($conn) {
-      $tsql = "SELECT VOORWERPNUMMER, TITEL, BESCHRIJVING, STARTPRIJS, LOOPTIJDBEGINDAG, LOOPTIJDEINDEDAG, BODBEDRAG
-               FROM VOORWERP
+      $tsql = "SELECT VOORWERPNUMMER, TITEL, BESCHRIJVING, STARTPRIJS, LOOPTIJDBEGINDAG, LOOPTIJDEINDEDAG, MAX(BODBEDRAG) AS HIGH
+               FROM VOORWERP v
                LEFT JOIN BOD
-               ON   BOD.VOORWERP = VOORWERP.VOORWERPNUMMER
+               ON   BOD.VOORWERP = v.VOORWERPNUMMER
 			         LEFT JOIN VOORWERPINRUBRIEK
-			         ON VOORWERPINRUBRIEK.VOORWERP = VOORWERP.VOORWERPNUMMER
+			         ON VOORWERPINRUBRIEK.VOORWERP = v.VOORWERPNUMMER
 			         WHERE VOORWERPINRUBRIEK.RUBRIEKNUMMER = $rubrieknummer
+               GROUP BY v.VOORWERPNUMMER, v.VERKOPER, v.KOPER, v.TITEL, v.BESCHRIJVING, v.STARTPRIJS, v.STARTPRIJS, v.BETALINGSWIJZE, v.BETALINGSINSTRUCTIE, v.PLAATSNAAM, v.LAND, v.LOOPTIJD, v.LOOPTIJDBEGINDAG, v.LOOPTIJDBEGINTIJDSTIP, v.VERZENDKOSTEN, v.VERZENDINSTRUCTIES, v.LOOPTIJDEINDEDAG, v.LOOPTIJDEINDETIJDSTIP, v.VEILINGGESLOTEN, v.VERKOOPPRIJS
                ORDER BY TITEL";
 
 
@@ -52,7 +53,7 @@
                }
                while( $voorwerp = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC))
                {
-                 $url = "http://localhost/I-Project-5/I-Project-5/voorbeeldvoorwerp.php";
+                 $url = "http://localhost/I-Project-5/I-Project-5/voorwerp.php";
                  $name = "Voorwerp";
                  $value = $voorwerp['VOORWERPNUMMER'];
                  $newUrl = $url . "?$name=$value";
@@ -85,7 +86,7 @@
         echo '</div>';
             //<a class="button" href="voorbeeldvoorwerp.php">Bied Mee</a>
             echo '<h4>'; echo $voorwerp['STARTPRIJS']; echo '</h4>';
-            echo '<h5>'; echo $voorwerp['BODBEDRAG']; echo '</h5>';
+            echo '<h5>'; echo $voorwerp['HIGH']; echo '</h5>';
             echo '<h6>'; echo $voorwerp['LOOPTIJDBEGINDAG']; echo '</h6>';
             echo '<p>';  echo $voorwerp['BESCHRIJVING']; echo '</p>';
             echo '<a class="button"'; echo 'href="'; echo $newUrl;  echo '"><img src= "Images/calltoaction.png">'; echo '</a>';

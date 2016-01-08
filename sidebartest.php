@@ -40,7 +40,7 @@
                 $sqlRubrieken = "SELECT *
                                  FROM RUBRIEK";
                 $resultRubrieken = sqlsrv_query($conn, $sqlRubrieken);
-                $resultSubRubrieken = sqlsrv_query($conn, $sqlRubrieken);
+
 
                 while($rubrieken = sqlsrv_fetch_array($resultRubrieken, SQLSRV_FETCH_ASSOC)){
 
@@ -52,11 +52,15 @@
                     echo '<a href="#"'; echo 'class="dropdown-toggle"'; echo 'data-toggle="dropdown">'; echo $rubrieken['RUBRIEKNAAM']; echo '<span class="caret"></span></a>';
                     echo '<ul class="dropdown-menu forAnimate" role="menu">';
 
+                    $sqlRubrieken = "SELECT *
+                                     FROM RUBRIEK";
+                    $resultSubRubrieken = sqlsrv_query($conn, $sqlRubrieken);
+
                     while($rubrieken1 = sqlsrv_fetch_array($resultSubRubrieken, SQLSRV_FETCH_ASSOC)){
 
                         if( $rubrieken1['HOOFDRUBRIEK'] == $rubrieken['RUBRIEKNUMMER'])
                         {
-                          
+
                             $url = "http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php";
                             $name = "productoverzicht";                       // The parameter name
                             $value = $rubrieken1['RUBRIEKNUMMER'];                     // The parameter value
