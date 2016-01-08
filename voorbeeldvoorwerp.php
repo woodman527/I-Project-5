@@ -20,19 +20,19 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img src="Images/voorbeeldlamp.JPG" alt="Chania">
+                            <img src="Images/voorbeeldlamp.JPG" alt="Chania" height="200px" width="200px">
                         </div>
 
                         <div class="item">
-                            <img src="Images/voorbeeldlamp2.JPG" alt="Chania">
+                            <img src="Images/voorbeeldlamp2.JPG" alt="Chania" height="200px" width="200px">
                         </div>
 
                         <div class="item">
-                            <img src="Images/voorbeeldlamp3.JPG" alt="Flower">
+                            <img src="Images/voorbeeldlamp3.JPG" alt="Flower" height="200px" width="200px">
                         </div>
 
                         <div class="item">
-                            <img src="Images/voorbeeldlamp4.JPG" alt="Flower">
+                            <img src="Images/voorbeeldlamp4.JPG" alt="Flower" height="200px" width="200px">
                         </div>
                     </div>
 
