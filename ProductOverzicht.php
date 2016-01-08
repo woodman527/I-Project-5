@@ -13,8 +13,19 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     </head>
     <body>
+
+  <div class="content">
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php">Titel Oplopend</a></li>
+          <li><a href="http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php">Titel aflopend</a></li>
+        </ul>
+      </div>
+
     <?php
-      echo '<div class="content">';
+
 
       $rubrieknummer = intval($_GET['productoverzicht']);
 
@@ -74,7 +85,8 @@
         echo '</div>';
             //<a class="button" href="voorbeeldvoorwerp.php">Bied Mee</a>
             echo '<h4>'; echo $voorwerp['STARTPRIJS']; echo '</h4>';
-            echo '<h5>'; echo $voorwerp['LOOPTIJDBEGINDAG']; echo '</h5>';
+            echo '<h5>'; echo $voorwerp['BODBEDRAG']; echo '</h5>';
+            echo '<h6>'; echo $voorwerp['LOOPTIJDBEGINDAG']; echo '</h6>';
             echo '<p>';  echo $voorwerp['BESCHRIJVING']; echo '</p>';
             echo '<a class="button"'; echo 'href="'; echo $newUrl;  echo '"><img src= "Images/calltoaction.png">'; echo '</a>';
 
