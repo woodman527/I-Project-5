@@ -11,9 +11,15 @@
     $gebruikertelsql = "SELECT TELEFOON
                      FROM GEBRUIKERSTELEFOON
                      WHERE GEBRUIKER = '$username'";
+    $gebruikerbodsql = "SELECT BOD.BODBEDRAG, BOD.VOORWERP, VOORWERP.TITEL, VOORWERP.BESCHRIJVING
+                     FROM BOD
+                     INNER JOIN VOORWERP
+                     ON VOORWERP.VOORWERPNUMMER = BOD.VOORWERP
+                     WHERE BOD.GEBRUIKER = '$username'";
 
     $gebruikresult = sqlsrv_query($conn, $gebruikersql);
     $gebruikresulttel = sqlsrv_query($conn, $gebruikertelsql);
+    $gebruikerresultbod = sqlsrv_query($conn, $gebruikerbodsql);
 
     if ( $gebruikresult === false)
     {
@@ -432,15 +438,16 @@
     </div>
     <div class="row">
         <div class="col-md-10">
+          <?php while( $gebruikerbod = sqlsrv_fetch_array( $gebruikerresultbod, SQLSRV_FETCH_ASSOC)) { ?>
             <div class="veilingitem">
-                <h3>Ikea Tafellamp (Zo goed als nieuw)</h3>
-                <img class="media-object" src="Images/voorbeeldlamp.JPG" alt="...">
-                <a class="button" href="voorbeeldvoorwerp.php">Bied Mee</a>
-                <h4>Huidig bod: 22 Euro</h4>
-                <p>Hier komt een testitem te staan inclusief afbeelding en link naar een uitgebreide beschrijving, deze beschrijving
-                    moet hoe lang hij ook is, steeds onder de afbeelding blijven staan en niet van het shcerm af lopen. anders gaat alles kapot
-                    en moet bart huilen.</p>
+<?php
+                echo '<h3>'; echo $gebruikerbod['TITEL']; echo '</h3>';
+                echo '<h4>'; echo $gebruikerbod['BESCHRIJVING']; echo '</h4>';
+                echo '<h5>'; echo $gebruikerbod['BODBEDRAG']; echo '</h5>';
+
+?>
             </div>
+        <?php    } ?>
         </div>
     </div>
     </div>
