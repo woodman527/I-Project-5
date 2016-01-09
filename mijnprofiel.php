@@ -128,7 +128,7 @@
                             <!-- E-mail -->
                             <label class="control-label" for="land">Land:</label>
                             <select class="form-control" name="Land">
-                                <option value=value= <?php echo $gebruiker['LAND']; ?>>Land...</option>
+                                <option value=value= <?php echo $gebruiker['LAND']; ?>> <?php echo $gebruiker['LAND']; ?></option>
                                 <option value="Netherlands">Netherlands (Holland, Europe)</option>
                                 <option value="Afganistan">Afghanistan</option>
                                 <option value="Albania">Albania</option>

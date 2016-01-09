@@ -17,6 +17,7 @@
 
   if($_SERVER['REQUEST_METHOD'] == "POST") {
 
+    $username = $_SESSION['username'];
     $titel = $_POST['titel'];
     $rubriek = $_POST['rubriek'];
     $startprijs = $_POST['startprijs'];
@@ -67,8 +68,8 @@
       echo 'error in afbeelding';
     }
     else {
-    //$vsql = "INSERT INTO VOORWERP(GEBRUIKERSNAAM, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
-             //VALUES ('Testlars', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
+    $vsql = "INSERT INTO VOORWERP(GEBRUIKERSNAAM, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
+             VALUES ('$username', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
 
 
    $afbsql ="INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)
@@ -79,8 +80,8 @@
 
     $rubsql = "INSERT INTO VOORWERPINRUBRIEK (RUBRIEKNUMMER, VOORWERPNUMMER)
              VALUES ((SELECT RUBRIEKNUMMER FROM RUBRIEK WHERE RUBRIEKNAAM = '$rubriek'), (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP))";
-//database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null)
-    if (database_query($afbsql, null))  {
+
+    if (database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null))  {
            echo 'gelukt';
         }
     else {
