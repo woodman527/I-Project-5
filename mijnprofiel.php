@@ -445,9 +445,9 @@
                 echo '<h4>'; echo $gebruikerbod['BESCHRIJVING']; echo '</h4>';
                 echo '<h5>'; echo $gebruikerbod['BODBEDRAG']; echo '</h5>';
 
-?>
-            </div>
-        <?php    } ?>
+
+            echo '</div>';
+            } ?>
         </div>
     </div>
     </div>
