@@ -34,7 +34,7 @@
     $afbeelding2 = $_POST['filetoupload2'];
     $afbeelding3 = $_POST['filetoupload3'];
     $afbeelding4 = $_POST['filetoupload4'];
-    echo $afbeelding1;
+    
 
 
     if(strlen($titel) > 18 OR !preg_match("/^[a-zA-Z_ -]*$/", $titel) OR $titel == null) {

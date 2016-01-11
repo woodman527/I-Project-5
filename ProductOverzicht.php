@@ -56,8 +56,12 @@
                  $url = "http://localhost/I-Project-5/I-Project-5/voorwerp.php";
                  $name = "Voorwerp";
                  $value = $voorwerp['VOORWERPNUMMER'];
+                 if($_SESSION['logged'] == true) {
                  $newUrl = $url . "?$name=$value";
-
+}
+                 else {
+                   $newUrl = 'ProductOverzicht.php';
+                 }
                  $bsql = "SELECT FILENAAM, BESTAND.VOORWERPNUMMER
                           FROM BESTAND
                           INNER JOIN VOORWERP
@@ -89,6 +93,7 @@
             echo '<h5>'; echo $voorwerp['HIGH']; echo '</h5>';
             echo '<h6>'; echo $voorwerp['LOOPTIJDBEGINDAG']; echo '</h6>';
             echo '<p>';  echo $voorwerp['BESCHRIJVING']; echo '</p>';
+
             echo '<a class="button"'; echo 'href="'; echo $newUrl;  echo '"><img src= "Images/calltoaction.png">'; echo '</a>';
 
 
