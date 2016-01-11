@@ -53,20 +53,26 @@
                }
                while( $voorwerp = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC))
                {
+
+                if($_SESSION['logged'] == true) {
                  $url = "http://localhost/I-Project-5/I-Project-5/voorwerp.php";
                  $name = "Voorwerp";
                  $value = $voorwerp['VOORWERPNUMMER'];
-                 if($_SESSION['logged'] == true) {
                  $newUrl = $url . "?$name=$value";
 }
                  else {
-                   $newUrl = 'ProductOverzicht.php';
+                   $url = "http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php";
+                   $name = "productoverzicht";
+                   $value = $rubrieknummer;
+                   $newUrl = $url . "?$name=$value";
                  }
+
+                 $voorwerpafb = $voorwerp['VOORWERPNUMMER'];
                  $bsql = "SELECT FILENAAM, BESTAND.VOORWERPNUMMER
                           FROM BESTAND
                           INNER JOIN VOORWERP
                           ON BESTAND.VOORWERPNUMMER = VOORWERP.VOORWERPNUMMER
-                          WHERE VOORWERP.VOORWERPNUMMER = $value";
+                          WHERE VOORWERP.VOORWERPNUMMER = $voorwerpafb";
 
                           $bresult = sqlsrv_query( $conn, $bsql);
 

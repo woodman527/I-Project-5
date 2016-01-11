@@ -16,10 +16,14 @@
                      INNER JOIN VOORWERP
                      ON VOORWERP.VOORWERPNUMMER = BOD.VOORWERP
                      WHERE BOD.GEBRUIKER = '$username'";
+    $gebruikerverkoopsql = "SELECT GEBRUIKERSNAAM
+                            FROM VERKOPER
+                            WHERE GEBRUIKERSNAAM = '$username'";
 
     $gebruikresult = sqlsrv_query($conn, $gebruikersql);
     $gebruikresulttel = sqlsrv_query($conn, $gebruikertelsql);
     $gebruikerresultbod = sqlsrv_query($conn, $gebruikerbodsql);
+    $gebruikerverkoopresult = sqlsrv_query($conn, $gebruikerverkoopsql);
 
     if ( $gebruikresult === false)
     {
@@ -423,7 +427,11 @@
                             <!-- Button -->
                             <label class="control-label" for="Veilen">Aanmaken veiling:</label>
                             <div class="controls">
+                              <?php if($gebruikerverkoopresult) { ?>
                                 <button class="btn btn-success form-control"><a href="VoorwerpVeilen.php">Aanmaken</a></button>
+                              <?php } else { ?>
+                                <button class="btn btn-success form-control"><a href="mijnprofiel.php">Aanmaken</a></button>
+                              <?php } ?>
                             </div>
                         </div>
                     </div>
