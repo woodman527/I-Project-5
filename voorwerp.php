@@ -110,8 +110,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                     echo '</div>';
                     echo '<br>';
                   }
-                  if($voorwerp['KOPER'] === $_SESSION['username'] OR $voorwerp['VERKOPER'] === $_SESSION['username'])
-                  { echo 'error'; ?>
+?>
 
                     <form method="POST" action=<?php $newUrl ?>>
                     <div class="form-group">
@@ -147,7 +146,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 <?php
 
     //else if(isset ($_POST['inputfeedback']))
-}
+
 
 
 
