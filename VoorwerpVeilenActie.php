@@ -72,7 +72,7 @@ echo $land;
     }
     else {
     $vsql = "INSERT INTO VOORWERP(VERKOPER, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
-             VALUES ('$username', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
+             VALUES ('$username', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', $looptijd, '2015-04-04', '12:00:00', '$verzendinstructie')";
 
 
    $afbsql ="INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)
@@ -81,7 +81,7 @@ echo $land;
                      ('$afbeelding3', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP)),
                      ('$afbeelding4', (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP))";
 
-    $rubsql = "INSERT INTO VOORWERPINRUBRIEK (RUBRIEKNUMMER, VOORWERPNUMMER)
+    $rubsql = "INSERT INTO VOORWERPINRUBRIEK (RUBRIEKNUMMER, VOORWERP)
              VALUES ((SELECT RUBRIEKNUMMER FROM RUBRIEK WHERE RUBRIEKNAAM = '$rubriek'), (SELECT MAX(VOORWERPNUMMER)FROM VOORWERP))";
 
     if (database_query($vsql, null) AND database_query($afbsql, null) AND database_query($rubsql, null))  {
