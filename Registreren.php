@@ -1,6 +1,10 @@
 <?php
     include_once('header.php');
     include_once('footer.php');
+    $url = "http://localhost/I-Project-5/I-Project-5/RegistreerActie.php";
+    $name = "page";
+    $value = "Registreren";
+    $newUrl = $url . "?$name=$value";
 ?>
 <head>
 <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +17,7 @@
 <body>
 <div class="row">
 <div class="col-md-12">
-    <form class="form-horizontal" action='RegistreerActie.php' method="POST">
+    <form class="form-horizontal" action=<?php echo $newUrl; ?> method="POST">
   <fieldset>
     <div id="legend">
       <legend class="">Registreren</legend>

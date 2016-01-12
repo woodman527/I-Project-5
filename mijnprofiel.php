@@ -3,6 +3,12 @@
     include_once('footer.php');
     include_once('dbactions.php');
     database_connect();
+
+    $url = "http://localhost/I-Project-5/I-Project-5/RegistreerActie.php";
+    $name = "page";
+    $value = "Wijzigen";
+    $newUrl = $url . "?$name=$value";
+
     $username = $_SESSION['username'];
 
     $gebruikersql = "SELECT *
@@ -56,7 +62,7 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-11">
-            <form class="form-horizontal" action='' method="POST">
+            <form class="form-horizontal" action=<?php echo $newUrl ?> method="POST">
                 <fieldset>
                     <div class="col-md-3">
                         <div class="control-group">
@@ -410,11 +416,12 @@
                             <!-- Button -->
                             <label class="control-label" for="registreren">Wijzigingen opslaan:</label>
                             <div class="controls">
-                                <button class="btn btn-success form-control" >Opslaan</button>
+                                <button class="btn btn-success form-control" >
                             </div>
                         </div>
                     </div>
-
+                  </fieldset>
+              </form>
                     <div class="col-md-3">
                         <div class="control-group">
                             <!-- Button -->
@@ -436,8 +443,7 @@
                         </div>
                     </div>
                     </div>
-                </fieldset>
-            </form>
+
         </div>
     <div class="row">
         <div class="col-md-11">

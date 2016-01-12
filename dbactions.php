@@ -6,6 +6,7 @@ Laatst bewerkt: 1-12-2015-->
 include('config.php');
 
 global $conn;
+global $check;
 
 //Connects to the database
 function database_connect()
@@ -112,7 +113,7 @@ function database_queryColumn($sql, $params, $col)
 }
 
 function check_bod($bod, $huidigehoogstebod)
-{ 
+{
   if($bod > $huidigehoogstebod){
 
   $verhoging = $bod - $huidigehoogstebod;

@@ -14,7 +14,12 @@
   <?php
   database_connect();
 
-  if($_SERVER['REQUEST_METHOD'] == "POST") {
+  $page = $_GET['page'];
+  echo $page;
+  if ($_SESSION['logged']) {
+    $currentuser = $_SESSION['username'];
+}
+if ($page == "Registreren") {
 
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -36,8 +41,8 @@
 
       hash('adler32', $password);
       hash('adler32', $password_confirm);
-      
-      
+
+
     if(strlen($username) > 10 OR !preg_match("/^[a-zA-Z0-9]*$/", $username) ) {
       echo 'Fout in gebruikersnaam';
     }
@@ -86,18 +91,70 @@
     else {
       $sql = "INSERT INTO GEBRUIKER (GEBRUIKERSNAAM, VRAAG, VOORNAAM, ACHTERNAAM, ADRESREGEL1, ADRESREGEL2, POSTCODE, PLAATSNAAM, LAND, GEBOORTEDAG, MAILBOX, WACHTWOORD, ANTWOORDTEKST, VERKOPER)
       VALUES ('$username', '$geheimevraag', '$voornaam', '$achternaam', '$adres', '$adres2', '$postcode', '$woonplaats', '$land', '$geboortedatum', '$email', '$password', '$antgeheimevraag', 'Niet')";
-      if (database_query($sql, null)) {
-        echo 'gelukt';
-        echo hash('adler32', $password);
-      }
-      else {
-        echo 'error';
-      }
+    }
+  }
+
+
+
+
+    else if($page == "Wijzigen") {
+
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $password_confirm = $_POST['password'];
+        $voornaam = $_POST['voornaam'];
+        $achternaam = $_POST['achternaam'];
+        $adres = $_POST['adres'];
+        $woonplaats = $_POST['woonplaats'];
+        $postcode = $_POST['Postcode'];
+        $land = $_POST['Land'];
+
+        if(strlen($username) > 10 OR !preg_match("/^[a-zA-Z0-9]*$/", $username) ) {
+          echo 'Fout in gebruikersnaam';
+        }
+        else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          echo 'Fout in email';
+        }
+        else if(strlen($password) > 9 OR $password != $password_confirm) {
+          echo 'Fout in wachtwoord';
+        }
+        else if(strlen($voornaam) > 20 OR !preg_match("/^[a-zA-Z_ -]*$/", $voornaam) OR $voornaam == null) {
+          echo 'Fout in voornaam';
+        }
+        else if(strlen($achternaam) > 30 OR !preg_match("/^[a-zA-Z_ -]*$/", $achternaam) OR $achternaam == null) {
+          echo 'Fout in achternaam';
+        }
+        else if(strlen($adres) > 100 OR !preg_match("/^[a-zA-Z0-9_ -]*$/", $adres) OR $adres ==  null) {
+          echo 'Fout in adres';
+        }
+        else if(strlen($woonplaats) > 60 OR !preg_match("/^[a-zA-Z_ -]*$/", $woonplaats) OR $woonplaats ==  null) {
+          echo 'Fout in woonplaats';
+        }
+        else if($land ==  null) {
+          echo 'Fout in land';
+        }
+        else {
+
+      $sql = "UPDATE GEBRUIKER
+              SET GEBRUIKERSNAAM='$username', VOORNAAM='$voornaam', ACHTERNAAM='$achternaam', ADRESREGEL1='$adres', POSTCODE='$postcode', PLAATSNAAM='$woonplaats', LAND='$land', MAILBOX='$email', WACHTWOORD='$password'
+              WHERE GEBRUIKERSNAAM='$currentuser'";
+            }
+
+
     }
 
 
 
-    database_disconnect();
+    if (database_query($sql, null)) {
+      echo 'gelukt';
+      echo hash('adler32', $password);
     }
+    else {
+      echo 'error';
+    }
+
+
+        database_disconnect();
     ?>
   </body>
