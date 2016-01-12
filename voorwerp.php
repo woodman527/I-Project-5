@@ -103,9 +103,11 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                     while( $feedbackvoorwerp = sqlsrv_fetch_array( $resultaatFeedback, SQLSRV_FETCH_ASSOC))
                     {
 
+                    echo '<h3>';   echo $feedbackvoorwerp[ 'FEEDBACKSOORT']; echo '</h3>';
+                    echo '<div class="box">';
                     echo $feedbackvoorwerp['COMMENTAAR'];
-                    echo $feedbackvoorwerp[ 'FEEDBACKSOORT'];
                     echo $feedbackvoorwerp[ 'TIJDSTIP']; echo $feedbackvoorwerp['DAG'];
+                    echo '</div>';
                     echo '<br>';
                   }
                   if($voorwerp['KOPER'] === $_SESSION['username'] OR $voorwerp['VERKOPER'] === $_SESSION['username'])
