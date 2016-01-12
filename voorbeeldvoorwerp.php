@@ -1,7 +1,7 @@
 <?php
     include_once('header.php');
     include_once('footer.php');
-    include'sidebartest.php';
+    include_once('sidebartest.php');
 ?>
 
 <div class="content">

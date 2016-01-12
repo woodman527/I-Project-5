@@ -99,9 +99,21 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                     {
 
                     echo $feedbackvoorwerp['COMMENTAAR'];
-                    echo $feedbackvoorwerp['FEEDBACKSOORT'];
+                    echo $feedbackvoorwerp[ 'FEEDBACKSOORT'];
                     echo $feedbackvoorwerp[ 'TIJDSTIP']; echo $feedbackvoorwerp['DAG'];
+                    echo '<br>';
                   }
+                  if($voorwerp['KOPER'] == $_SESSION['username'] OR $voorwerp['VERKOPER'] == $_SESSION['username'])
+                  { echo 'error';?>
+
+                    <form method="POST" action=<?php $newUrl ?>>
+                    <div class="form-group">
+                        <label for="inputbod">Feedback</label>
+                        <input type="text" class="form-control" id="inputfeedback" placeholder="Uw feedback" name="feedbacktext">
+                        <button type="submit" class="btn btn-default" name="doFeedback">Enter</button>
+                    </div>
+                    </form>
+                <?php  }
                   echo '</div>';
                   ?>
 
