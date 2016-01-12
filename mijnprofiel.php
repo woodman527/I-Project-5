@@ -1,6 +1,35 @@
 <?php
     include_once('header.php');
     include_once('footer.php');
+    include_once('dbactions.php');
+    database_connect();
+    $username = $_SESSION['username'];
+
+    $gebruikersql = "SELECT *
+                     FROM GEBRUIKER
+                     WHERE GEBRUIKERSNAAM = '$username'";
+    $gebruikertelsql = "SELECT TELEFOON
+                     FROM GEBRUIKERSTELEFOON
+                     WHERE GEBRUIKER = '$username'";
+    $gebruikerbodsql = "SELECT BOD.BODBEDRAG, BOD.VOORWERP, VOORWERP.TITEL, VOORWERP.BESCHRIJVING
+                     FROM BOD
+                     INNER JOIN VOORWERP
+                     ON VOORWERP.VOORWERPNUMMER = BOD.VOORWERP
+                     WHERE BOD.GEBRUIKER = '$username'";
+    $gebruikerverkoopsql = "SELECT GEBRUIKERSNAAM
+                            FROM VERKOPER
+                            WHERE GEBRUIKERSNAAM = '$username'";
+
+    $gebruikresult = sqlsrv_query($conn, $gebruikersql);
+    $gebruikresulttel = sqlsrv_query($conn, $gebruikertelsql);
+    $gebruikerresultbod = sqlsrv_query($conn, $gebruikerbodsql);
+    $gebruikerverkoopresult = sqlsrv_query($conn, $gebruikerverkoopsql);
+
+    if ( $gebruikresult === false)
+    {
+    die( print_r( sqlsrv_errors() ) );
+    }
+
 ?>
 <head>
 
@@ -18,6 +47,8 @@
 
 </head>
 <div class="content">
+<?php  while( $gebruiker = sqlsrv_fetch_array( $gebruikresult, SQLSRV_FETCH_ASSOC))
+  { ?>
 <div class="row">
     <div class="col-md-8">
         <h1>Profielinformatie</h1>
@@ -32,7 +63,7 @@
                             <!-- Username -->
                             <label class="control-label"  for="username">Gebruikersnaam:</label>
                             <div class="controls">
-                                <input type="text" id="username" name="username" placeholder="Gebruikersnaam" class="form-control">
+                                <input type="text" value= <?php echo $gebruiker['GEBRUIKERSNAAM']; ?> id="username" name="username"  class="form-control">
                             </div>
                         </div>
 
@@ -40,7 +71,7 @@
                             <!-- E-mail -->
                             <label class="control-label" for="email">E-mail:</label>
                             <div class="controls">
-                                <input type="text" id="email" name="email" placeholder="e@mail.nl" class="form-control">
+                                <input type="text" id="email" name="email" value= <?php echo $gebruiker['MAILBOX']; ?> class="form-control">
                             </div>
                         </div>
 
@@ -48,7 +79,7 @@
                             <!-- Password-->
                             <label class="control-label" for="password">Wachtwoord:</label>
                             <div class="controls">
-                                <input type="password" id="password" name="password" placeholder="******" class="form-control">
+                                <input type="text" id="password" name="password" value= <?php echo $gebruiker['WACHTWOORD']; ?> class="form-control">
                             </div>
                         </div>
 
@@ -56,7 +87,7 @@
                             <!-- Password -->
                             <label class="control-label"  for="password_confirm">Wachtwoord (bevestigen)</label>
                             <div class="controls">
-                                <input type="password" id="password_confirm" name="password_confirm" placeholder="******" class="form-control">
+                                <input type="text" id="password_confirm" name="password_confirm" value= <?php echo $gebruiker['WACHTWOORD']; ?> class="form-control">
                             </div>
                         </div>
                     </div>
@@ -66,14 +97,14 @@
                             <!-- E-mail -->
                             <label class="control-label" for="voornaam">Voornaam:</label>
                             <div class="controls">
-                                <input type="text" id="voornaam" name="voornaam" placeholder="voornaam" class="form-control">
+                                <input type="text" id="voornaam" name="voornaam" value= <?php echo $gebruiker['VOORNAAM']; ?> class="form-control">
                             </div>
 
                             <div class="control-group">
                                 <!-- E-mail -->
                                 <label class="control-label" for="achternaam">Achternaam:</label>
                                 <div class="controls">
-                                    <input type="text" id="achternaam" name="achternaam" placeholder="achternaam" class="form-control">
+                                    <input type="text" id="achternaam" name="achternaam" value= <?php echo $gebruiker['ACHTERNAAM']; ?> class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -81,7 +112,7 @@
                             <!-- E-mail -->
                             <label class="control-label" for="achternaam">Adres:</label>
                             <div class="controls">
-                                <input type="text" id="adres" name="adres" placeholder="adres" class="form-control">
+                                <input type="text" id="adres" name="adres" value= <?php echo $gebruiker['ADRESREGEL1']; ?> class="form-control">
                             </div>
                         </div>
 
@@ -89,7 +120,7 @@
                             <!-- E-mail -->
                             <label class="control-label" for="woonplaats">Woonplaats:</label>
                             <div class="controls">
-                                <input type="text" id="woonplaats" name="woonplaats" placeholder="woonplaats" class="form-control">
+                                <input type="text" id="woonplaats" name="woonplaats" value= <?php echo $gebruiker['PLAATSNAAM']; ?> class="form-control">
                             </div>
                         </div>
 
@@ -99,7 +130,7 @@
                             <!-- E-mail -->
                             <label class="control-label" for="Postcode">Postcode:</label>
                             <div class="controls">
-                                <input type="text" id="Postcode" name="Postcode" placeholder="Postcode" class="form-control">
+                                <input type="text" id="Postcode" name="Postcode" value= <?php echo $gebruiker['POSTCODE']; ?> class="form-control">
                             </div>
                         </div>
 
@@ -107,7 +138,7 @@
                             <!-- E-mail -->
                             <label class="control-label" for="land">Land:</label>
                             <select class="form-control" name="Land">
-                                <option value="">Land...</option>
+                                <option value=value= <?php echo $gebruiker['LAND']; ?>> <?php echo $gebruiker['LAND']; ?></option>
                                 <option value="Netherlands">Netherlands (Holland, Europe)</option>
                                 <option value="Afganistan">Afghanistan</option>
                                 <option value="Albania">Albania</option>
@@ -358,29 +389,23 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="control-group">
-                            <!-- E-mail -->
-                            <label class="control-label" for="Telefoonnummer1">Telefoonnummer 1:</label>
-                            <div class="controls">
-                                <input type="text" id="Telefoonnummer1" name="Telefoonnummer1" placeholder="Telefoonnummer 1" class="form-control">
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <!-- E-mail -->
-                            <label class="control-label" for="Telefoonnummer2">Telefoonnummer 2:</label>
-                            <div class="controls">
-                                <input type="text" id="Telefoonnummer2" name="Telefoonnummer2" placeholder="Telefoonnummer 2" class="form-control">
-                            </div>
-                        </div>
 
+                    <div class="col-md-3">
+                      <?php    if ( $gebruikresulttel === false)
+                                {
+                                die( print_r( sqlsrv_errors() ) );
+                                }
+                                while( $gebruikertel = sqlsrv_fetch_array( $gebruikresulttel, SQLSRV_FETCH_ASSOC)) { ?>
                         <div class="control-group">
                             <!-- E-mail -->
-                            <label class="control-label" for="Telefoonnummer3">Telefoonnummer 3:</label>
+                            <label class="control-label" for="Telefoonnummer1">Telefoonnummer:</label>
                             <div class="controls">
-                                <input type="text" id="Telefoonnummer3" name="Telefoonnummer3" placeholder="Telefoonnummer 3" class="form-control">
+                                <input type="text" id="Telefoonnummer1" name="Telefoonnummer" value= <?php echo $gebruikertel['TELEFOON']; ?> class="form-control">
                             </div>
                         </div>
+                        <?php }
+}
+                       ?>
                         <div class="control-group">
                             <!-- Button -->
                             <label class="control-label" for="registreren">Wijzigingen opslaan:</label>
@@ -389,6 +414,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-3">
                         <div class="control-group">
                             <!-- Button -->
@@ -401,7 +427,11 @@
                             <!-- Button -->
                             <label class="control-label" for="Veilen">Aanmaken veiling:</label>
                             <div class="controls">
+                              <?php if($gebruikerverkoopresult) { ?>
                                 <button class="btn btn-success form-control"><a href="VoorwerpVeilen.php">Aanmaken</a></button>
+                              <?php } else { ?>
+                                <button class="btn btn-success form-control"><a href="mijnprofiel.php">Aanmaken</a></button>
+                              <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -416,15 +446,19 @@
     </div>
     <div class="row">
         <div class="col-md-10">
+          <?php while( $gebruikerbod = sqlsrv_fetch_array( $gebruikerresultbod, SQLSRV_FETCH_ASSOC)) { ?>
             <div class="veilingitem">
-                <h3>Ikea Tafellamp (Zo goed als nieuw)</h3>
-                <img class="media-object" src="Images/voorbeeldlamp.JPG" alt="...">
-                <a class="button" href="voorbeeldvoorwerp.php">Bied Mee</a>
-                <h4>Huidig bod: 22 Euro</h4>
-                <p>Hier komt een testitem te staan inclusief afbeelding en link naar een uitgebreide beschrijving, deze beschrijving
-                    moet hoe lang hij ook is, steeds onder de afbeelding blijven staan en niet van het shcerm af lopen. anders gaat alles kapot
-                    en moet bart huilen.</p>
-            </div>
+<?php
+                echo '<h3>'; echo $gebruikerbod['TITEL']; echo '</h3>';
+                echo '<h4>'; echo $gebruikerbod['BESCHRIJVING']; echo '</h4>';
+                echo '<h5>'; echo $gebruikerbod['BODBEDRAG']; echo '</h5>';
+
+
+            echo '</div>';
+            } ?>
         </div>
     </div>
     </div>
+<?php
+database_disconnect();
+?>

@@ -1,6 +1,15 @@
 <?php
     include_once('header.php');
     include_once('footer.php');
+    database_connect();
+
+    $rubsql = "SELECT *
+               FROM RUBRIEK
+               WHERE HOOFDRUBRIEK IS NULL";
+
+    $resultRubrieken = sqlsrv_query($conn, $rubsql);
+
+
 ?>
 <head>
 <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,23 +35,31 @@
         <input type="text" id="titel" name="titel" placeholder="titel" class="form-control" enctype="multipart/form-data">
       </div>
     </div>
+
     <div class="control-group">
       <!-- Rubriek -->
       <label class="control-label" for="rubriek">Rubriek</label>
       <div class="controls">
         <select class="form-control" name="rubriek">
-          <option value=""> Rubriek...</option>
-          <option value="Auto"> .....Auto.....</option>
-          <option value=""> .....Kleding.....</option>
-          <option value="Onderbroeken"> Onderbroeken</option>
-          <option value="T-Shirts"> T-Shirts</option>
-          <option value="Broeken"> Broeken</option>
-          <option value="Schoenen"> Schoenen</option>
-          <option value="Sokken"> Sokken</option>
-          <option value="Fietsen"> .....Fietsen.....</option>
-          <option value="Electronica"> .....Elektronica.....</option>
+<?php  while($rubrieken = sqlsrv_fetch_array($resultRubrieken, SQLSRV_FETCH_ASSOC)){ ?>
+          <option value=""> -<?php echo $rubrieken['RUBRIEKNAAM'] ?> </option>
+            <?php
+            $rubrieknummer1 = $rubrieken['RUBRIEKNUMMER'];
+            $rubsql1 = "SELECT *
+                       FROM RUBRIEK
+                       WHERE HOOFDRUBRIEK = '$rubrieknummer1' ";
+
+                       $resultRubrieken1 = sqlsrv_query($conn, $rubsql1);
+
+                       while($rubrieken1 = sqlsrv_fetch_array($resultRubrieken1, SQLSRV_FETCH_ASSOC)) { ?>
+                          <option value= <?php echo $rubrieken1['RUBRIEKNAAM'];?> ><?php echo $rubrieken1['RUBRIEKNAAM'];?></option>
+                <?php       }
+
+           } ?>
         </select>
+
       </div>
+
     </div>
 
     <div class="control-group">

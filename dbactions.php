@@ -111,4 +111,37 @@ function database_queryColumn($sql, $params, $col)
     return $result;
 }
 
+function check_bod($bod, $startprijs, $huidigehoogstebod)
+{
+  if($bod > $startprijs && $bod > $huidigehoogstebod){
+
+  $verhoging = $bod - $huidigehoogstebod;
+  if($huidigehoogstebod > 1.00 AND $huidigehoogstebod < 49.99 AND $verhoging > 0.50)
+  {
+   return true;
+  }
+  else if($huidigehoogstebod > 50.00 AND $huidigehoogstebod < 499.99 AND $verhoging > 1.00)
+  {
+  return true;
+  }
+  else if($huidigehoogstebod > 500.00 AND $huidigehoogstebod < 999.99 AND $verhoging > 5.00)
+  {
+  return true;
+  }
+  else if($huidigehoogstebod > 1000.00 AND $huidigehoogstebod < 4999.99 AND $verhoging > 10.00)
+  {
+  return true;
+  }
+  else if($huidigehoogstebod > 5000.00 AND $huidigehoogstebod < 9999999.99 AND $verhoging > 50.00)
+  {
+  return true;
+  }
+  else
+  {
+    echo 'ERROR';
+}
+}
+}
+
+
 ?>
