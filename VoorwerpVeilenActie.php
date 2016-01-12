@@ -34,8 +34,8 @@
     $afbeelding2 = $_POST['filetoupload2'];
     $afbeelding3 = $_POST['filetoupload3'];
     $afbeelding4 = $_POST['filetoupload4'];
-    
 
+echo $land;
 
     if(strlen($titel) > 18 OR !preg_match("/^[a-zA-Z_ -]*$/", $titel) OR $titel == null) {
       echo 'error in titel';
@@ -55,6 +55,9 @@
     else if(!preg_match("/^[0-9]*$/", $looptijd) OR $looptijd == null ) {
       echo 'error in looptijd';
     }
+    else if(strlen($land) > 20) {
+      echo 'error in land';
+    }
     else if(strlen($beschrijving) > 100 OR !preg_match("/^[a-zA-Z_ -]*$/", $beschrijving) OR $beschrijving == null) {
       echo 'error in beschrijving';
     }
@@ -64,11 +67,11 @@
     else if(strlen($voorwerplokatie) > 60 OR !preg_match("/^[a-zA-Z_ -]*$/", $voorwerplokatie) OR $voorwerplokatie == null) {
       echo 'error in voorwerplokatie';
     }
-    else if($afbeelding1 == null AND $afbeelding2 == null AND $afbeelding3 == null AND $afbeelding4 == null) {
+    else if($afbeelding1 == null AND $afbeelding2 == null AND $afbeelding3 == null AND $afbeelding4 == null AND strlen($afbeelding1) > 50 AND strlen($afbeelding2) > 50 AND strlen($afbeelding3) > 50 AND strlen($afbeelding4) > 50) {
       echo 'error in afbeelding';
     }
     else {
-    $vsql = "INSERT INTO VOORWERP(GEBRUIKERSNAAM, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
+    $vsql = "INSERT INTO VOORWERP(VERKOPER, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
              VALUES ('$username', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', '$looptijd', '$looptijdbegindag', '$looptijdbegintijdstip', '$verzendinstructie')";
 
 

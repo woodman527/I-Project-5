@@ -4,6 +4,7 @@
     include_once ('sidebartest.php');
     include_once ('dbactions.php');
     database_connect();
+
     $rubrieknummer = intval($_GET['productoverzicht']);
     $url = "http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php";
     $name = "productoverzicht";
@@ -33,6 +34,8 @@
             <option value="HIGH DESC">Duurste producten</option>
             <option value="HIGH ASC">Goekoopste producten</option>
             <option value="LOOPTIJDBEGINDAG DESC">Recente producten</option>
+            <option value="LOOPTIJDEINDEDAG ASC">Bijna voorbij producten</option>
+            <option value="AANTAL DESC">Populaire producten</option>
             </select>
 
           </div>
@@ -43,11 +46,17 @@
     </div>
 
     <?php
+      if($_SERVER['REQUEST_METHOD'] == "POST") {
 
-      $orde = $_POST['selecteeropties'];;
+        $orde = $_POST['selecteeropties'];
+      }
+      else {
+        $orde = "TITEL ASC";
+      }
+
 
     if($conn) {
-      $tsql = "SELECT VOORWERPNUMMER, TITEL, BESCHRIJVING, STARTPRIJS, LOOPTIJDBEGINDAG, LOOPTIJDEINDEDAG, MAX(BODBEDRAG) AS HIGH
+      $tsql = "SELECT VOORWERPNUMMER, TITEL, BESCHRIJVING, STARTPRIJS, LOOPTIJDBEGINDAG, LOOPTIJDEINDEDAG, MAX(BODBEDRAG) AS HIGH, COUNT(BODBEDRAG) AS AANTAL
                FROM VOORWERP v
                LEFT JOIN BOD
                ON   BOD.VOORWERP = v.VOORWERPNUMMER
