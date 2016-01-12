@@ -33,7 +33,7 @@
         <div class="media">
             <div class="media-right">
                 <a href="Index.php">
-                <img class="media-object img-responsive" src="Images/LogoWebsitenotxt.png" alt="Logo" width="127" height="104">
+                <img class="img-responsive" src="Images/LogoWebsitenotxt.png" alt="Logo" width="127" height="104">
                 </a>
             </div>
                 <h2 class="media-right media-middle media-heading"> Zo, verkocht! </h2>
