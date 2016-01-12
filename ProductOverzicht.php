@@ -14,15 +14,18 @@
     </head>
     <body>
 
-  <div class="content">
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><a href="http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php"x>Titel Oplopend</a></li>
-          <li><a href="http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php">Titel aflopend</a></li>
-        </ul>
-      </div>
+      <form class="form-horizontal" action='RegistreerActie.php' method="POST">
+          <fieldset>
+             <div class="control-group">
+        <!-- Select opties -->
+          <label class="control-label">Selecteer keuze:</label>
+          <select class="form-control" name="selecteeropties">
+              <option value="1">Oplopend op prijs.</option>
+              <option value="2">Aflopend op prijs.</option>
+          </select>
+              </div>
+          </fieldset>
+      </form>
 
     <?php
 
