@@ -16,38 +16,38 @@
     <form class="form-horizontal" action='RegistreerActie.php' method="POST">
   <fieldset>
     <div id="legend">
-      <legend class="">Register</legend>
+      <legend class="">Registreren</legend>
     </div>
       <div class="col-md-2">
     <div class="control-group">
       <!-- Username -->
-      <label class="control-label"  for="username">Gebruikersnaam</label>
+      <label class="control-label"  for="username">Gebruikersnaam*</label>
       <div class="controls">
-        <input type="text" id="username" name="username" placeholder="Gebruikersnaam" class="form-control">
+        <input type="text" id="username" name="username" placeholder="Gebruikersnaam" class="form-control" required>
       </div>
     </div>
 
     <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="email">E-mail</label>
+      <label class="control-label" for="email">E-mail*</label>
       <div class="controls">
-        <input type="text" id="email" name="email" placeholder="e@mail.nl" class="form-control">
+        <input type="text" id="email" name="email" placeholder="e@mail.com" class="form-control"  required>
       </div>
     </div>
 
     <div class="control-group">
       <!-- Password-->
-      <label class="control-label" for="password">Wachtwoord</label>
+      <label class="control-label" for="password">Wachtwoord*</label>
       <div class="controls">
-        <input type="password" id="password" name="password" placeholder="******" class="form-control">
+        <input type="password" id="password" name="password" placeholder="******" class="form-control"  required>
       </div>
     </div>
 
     <div class="control-group">
       <!-- Password -->
-      <label class="control-label"  for="password_confirm">Wachtwoord (bevestigen)</label>
+      <label class="control-label"  for="password_confirm">Wachtwoord (bevestigen)*</label>
       <div class="controls">
-        <input type="password" id="password_confirm" name="password_confirm" placeholder="******" class="form-control">
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="******" class="form-control" required>
       </div>
     </div>
       </div>
@@ -55,30 +55,30 @@
 
     <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="voornaam">Voornaam</label>
+      <label class="control-label" for="voornaam">Voornaam*</label>
       <div class="controls">
         <input type="text" id="voornaam" name="voornaam" placeholder="voornaam" class="form-control">
       </div>
 
       <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="achternaam">Achternaam</label>
+      <label class="control-label" for="achternaam">Achternaam*</label>
       <div class="controls">
-        <input type="text" id="achternaam" name="achternaam" placeholder="achternaam" class="form-control">
+        <input type="text" id="achternaam" name="achternaam" placeholder="achternaam" class="form-control" required>
       </div>
     </div>
     </div>
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="adres">Adres</label>
+      <label class="control-label" for="adres">Hoofdadres*</label>
       <div class="controls">
-        <input type="text" id="adres" name="adres" placeholder="adres" class="form-control">
+        <input type="text" id="adres" name="adres" placeholder="adres" class="form-control" required>
       </div>
     </div>
 
         <div class="control-group">
           <!-- E-mail -->
-          <label class="control-label" for="adres2">Adres</label>
+          <label class="control-label" for="adres2">Tweede adres</label>
           <div class="controls">
             <input type="text" id="adres2" name="adres2" placeholder="adres2" class="form-control">
           </div>
@@ -89,9 +89,9 @@
 
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="woonplaats">Woonplaats</label>
+      <label class="control-label" for="woonplaats">Woonplaats*</label>
       <div class="controls">
-        <input type="text" id="woonplaats" name="woonplaats" placeholder="woonplaats" class="form-control">
+        <input type="text" id="woonplaats" name="woonplaats" placeholder="woonplaats" class="form-control" required>
       </div>
     </div>
 
@@ -99,16 +99,16 @@
 
         <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="postcode">Postcode:</label>
+      <label class="control-label" for="postcode">Postcode*</label>
       <div class="controls">
-        <input type="text" id="Postcode" name="postcode" placeholder="Postcode" class="form-control">
+        <input type="text" id="Postcode" name="postcode" placeholder="Postcode" class="form-control" required>
       </div>
     </div>
 
         <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="land">Land:</label>
-      <select class="form-control" name="land">
+      <label class="control-label" for="land">Land*</label>
+      <select class="form-control" name="land" required>
 <option value="">Land...</option>
 <option value="Netherlands">Netherlands (Holland, Europe)</option>
 <option value="Afganistan">Afghanistan</option>
@@ -362,9 +362,9 @@
 
     <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="geboortedatum">Geboortedatum</label>
+      <label class="control-label" for="geboortedatum">Geboortedatum*</label>
       <div class="controls">
-        <input type="text" id="geboortedatum" name="geboortedatum" placeholder="01-01-2015" class="form-control">
+        <input type="text" id="geboortedatum" name="geboortedatum" placeholder="01-01-2015" class="form-control" required>
       </div>
     </div>
   </div>
@@ -374,14 +374,14 @@
 
          <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="telefoonnummer1">Telefoonnummer 1:</label>
+      <label class="control-label" for="telefoonnummer1">Telefoonnummer 1*</label>
       <div class="controls">
-        <input type="text" id="telefoonnummer1" name="telefoonnummer1" placeholder="telefoonnummer 1" class="form-control">
+        <input type="text" id="telefoonnummer1" name="telefoonnummer1" placeholder="telefoonnummer 1" class="form-control" required>
       </div>
     </div>
          <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="telefoonnummer2">Telefoonnummer 2:</label>
+      <label class="control-label" for="telefoonnummer2">Telefoonnummer 2</label>
       <div class="controls">
         <input type="text" id="telefoonnummer2" name="telefoonnummer2" placeholder="telefoonnummer 2" class="form-control">
       </div>
@@ -389,7 +389,7 @@
 
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="telefoonnummer3">Telefoonnummer 3:</label>
+      <label class="control-label" for="telefoonnummer3">Telefoonnummer 3</label>
       <div class="controls">
         <input type="text" id="telefoonnummer3" name="telefoonnummer3" placeholder="telefoonnummer 3" class="form-control">
       </div>
@@ -401,22 +401,21 @@
 
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="geheimevraag">Geheime vraag:</label>
-      <select class="form-control" name="geheimevraag">
+      <label class="control-label" for="geheimevraag">Geheime vraag*</label>
+      <select class="form-control" name="geheimevraag" required>
 <option value="">Geheime vraag...</option>
 <option value="1">Wat is de meisjesnaam van je moeder?</option>
 <option value="2">Wat was de naam van je eerste huisdier?</option>
 <option value="3">Wat was je allereerste knuffel?</option>
 <option value="4">Wat was het huisnummer van je allereerste huis?</option>
-
-</select>
+              </select>
     </div>
 
           <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="antgeheimevraag">Antwoord:</label>
+      <label class="control-label" for="antgeheimevraag">Antwoord*</label>
       <div class="controls">
-        <input type="text" id="antgeheimevraag" name="antgeheimevraag" placeholder="Antwoord" class="form-control">
+        <input type="text" id="antgeheimevraag" name="antgeheimevraag" placeholder="Antwoord" class="form-control" required>
       </div>
       </div>
 
