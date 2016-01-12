@@ -4,6 +4,11 @@
     include_once ('sidebartest.php');
     include_once ('dbactions.php');
     database_connect();
+    $rubrieknummer = intval($_GET['productoverzicht']);
+    $url = "http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php";
+    $name = "productoverzicht";
+    $value = $rubrieknummer;
+    $orgUrl = $url . "?$name=$value"
     ?>
     <head>
 
@@ -14,23 +19,32 @@
     </head>
     <body>
 
-      <form class="form-horizontal" action='RegistreerActie.php' method="POST">
-          <fieldset>
-             <div class="control-group">
-        <!-- Select opties -->
-          <label class="control-label">Selecteer keuze:</label>
-          <select class="form-control" name="selecteeropties">
-              <option value="1">Oplopend op prijs.</option>
-              <option value="2">Aflopend op prijs.</option>
-          </select>
-              </div>
-          </fieldset>
-      </form>
+      <div class="row1">
+            <div class="col-md-8">
+            <div class="col-md-4">
+            <form class="form-horizontal" method="POST" name="select" action=<?php $orgUrl ?> >
+            <fieldset>
+            <div class="control-group">
+            <!-- Select opties -->
+            <label class="control-label">Selecteer keuze:</label>
+            <select class="form-control" name="selecteeropties">
+            <option value="TITEL ASC">Titel oplopend</option>
+            <option value="TITEL DESC">Titel aflopend</option>
+            <option value="HIGH DESC">Duurste producten</option>
+            <option value="HIGH ASC">Goekoopste producten</option>
+            <option value="LOOPTIJDBEGINDAG DESC">Recente producten</option>
+            </select>
+
+          </div>
+
+        </div>
+        <input type="submit" placeholder="refresh">
+      </div>
+    </div>
 
     <?php
 
-
-      $rubrieknummer = intval($_GET['productoverzicht']);
+      $orde = $_POST['selecteeropties'];;
 
     if($conn) {
       $tsql = "SELECT VOORWERPNUMMER, TITEL, BESCHRIJVING, STARTPRIJS, LOOPTIJDBEGINDAG, LOOPTIJDEINDEDAG, MAX(BODBEDRAG) AS HIGH
@@ -41,7 +55,7 @@
 			         ON VOORWERPINRUBRIEK.VOORWERP = v.VOORWERPNUMMER
 			         WHERE VOORWERPINRUBRIEK.RUBRIEKNUMMER = $rubrieknummer
                GROUP BY v.VOORWERPNUMMER, v.VERKOPER, v.KOPER, v.TITEL, v.BESCHRIJVING, v.STARTPRIJS, v.STARTPRIJS, v.BETALINGSWIJZE, v.BETALINGSINSTRUCTIE, v.PLAATSNAAM, v.LAND, v.LOOPTIJD, v.LOOPTIJDBEGINDAG, v.LOOPTIJDBEGINTIJDSTIP, v.VERZENDKOSTEN, v.VERZENDINSTRUCTIES, v.LOOPTIJDEINDEDAG, v.LOOPTIJDEINDETIJDSTIP, v.VEILINGGESLOTEN, v.VERKOOPPRIJS
-               ORDER BY TITEL";
+               ORDER BY $orde";
 
 
 
@@ -107,8 +121,9 @@
 
 
         echo "</div>";
-     echo "</div>";
+
 }
+echo "</div>";
     echo "</div>";
 
 

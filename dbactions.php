@@ -111,9 +111,9 @@ function database_queryColumn($sql, $params, $col)
     return $result;
 }
 
-function check_bod($bod, $startprijs, $huidigehoogstebod)
-{
-  if($bod > $startprijs && $bod > $huidigehoogstebod){
+function check_bod($bod, $huidigehoogstebod)
+{ 
+  if($bod > $huidigehoogstebod){
 
   $verhoging = $bod - $huidigehoogstebod;
   if($huidigehoogstebod > 1.00 AND $huidigehoogstebod < 49.99 AND $verhoging > 0.50)

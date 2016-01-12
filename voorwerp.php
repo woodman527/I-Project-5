@@ -46,10 +46,15 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 
         $bodbedrag = $_POST['inputbod'];
         $voorwerpnummer = $voorwerp['VOORWERPNUMMER'];
-        if (check_bod($bodbedrag, $voorwerp['STARTPRIJS'], $voorwerp['HIGH'])) {
+        $huidighoogstebod = $voorwerp['HIGH'];
+        if($huidighoogstebod == NULL) {
+          $huidighoogstebod = $voorwerp['STARTPRIJS'];
+        }
+      echo $voorwerp['HIGH'];
+        if (check_bod($bodbedrag, $huidighoogstebod)) {
 
         //$gebruiker = $_SESSION['username'];
-          $plaatsbod = "INSERT INTO BOD(BODBEDRAG, VOORWERP, GEBRUIKER, BODDAG, BODTIJDSTIP) VALUES ('$bodbedrag', '$voorwerpnummer', 'Faalski', '2015-04-04', '23:11:22' )";
+          $plaatsbod = "INSERT INTO BOD(BODBEDRAG, VOORWERP, GEBRUIKER, BODDAG, BODTIJDSTIP) VALUES ('$bodbedrag', '$voorwerpnummer', 'Faalski', '2015-04-04', '23:12:22' )";
           if (database_query($plaatsbod, null))  {
                echo 'gelukt';
             }
