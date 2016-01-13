@@ -34,6 +34,8 @@
     $afbeelding2 = $_POST['filetoupload2'];
     $afbeelding3 = $_POST['filetoupload3'];
     $afbeelding4 = $_POST['filetoupload4'];
+    $tijd = date("h:i");
+    $datum = date("Y-M-D");
 
 echo $land;
 
@@ -72,7 +74,7 @@ echo $land;
     }
     else {
     $vsql = "INSERT INTO VOORWERP(VERKOPER, TITEL, BESCHRIJVING, STARTPRIJS, BETALINGSWIJZE, BETALINGSINSTRUCTIE, PLAATSNAAM, LAND, LOOPTIJD, LOOPTIJDBEGINDAG, LOOPTIJDBEGINTIJDSTIP, VERZENDINSTRUCTIES)
-             VALUES ('$username', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', $looptijd, '2015-04-04', '12:00:00', '$verzendinstructie')";
+             VALUES ('$username', '$titel', '$beschrijving', '$startprijs', '$betalingswijze', '$betalingsinstructie', '$voorwerplokatie', '$land', $looptijd, '$tijd', '$datum', '$verzendinstructie')";
 
 
    $afbsql ="INSERT INTO BESTAND (FILENAAM, VOORWERPNUMMER)

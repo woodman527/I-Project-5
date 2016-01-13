@@ -33,7 +33,10 @@
     else {
       $rvasql = "INSERT INTO VERKOPER (GEBRUIKERSNAAM, BANK, BANKREKENING, CONTROLEOPTIE, CREDITCARD)
       VALUES ('$gebruikersnaam', '$Bank', '$IBAN', '$CtrOptie', '$Creditcard')";
-      if (database_query($rvasql, null)) {
+        $updvsql = "UPDATE
+              SET VERKOPER='wel';
+              WHERE GEBRUIKERSNAAM='$gebruikersnaam'";
+      if (database_query($rvasql, null) AND database_query($updvsql, null)) {
         echo 'gelukt';
       }
       else {
