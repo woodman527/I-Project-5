@@ -60,7 +60,7 @@
                         if($rubrieken1['HOOFDRUBRIEK'] == $rubrieken['RUBRIEKNUMMER'])
                         {
                           
-                            $url = "http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php";
+                            $url = "ProductOverzicht.php";
                             $name = "productoverzicht";                       // The parameter name
                             $value = $rubrieken1['RUBRIEKNUMMER'];                     // The parameter value
                             $newUrl = $url . "?$name=$value";

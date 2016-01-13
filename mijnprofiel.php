@@ -4,7 +4,7 @@
     include_once('dbactions.php');
     database_connect();
 
-    $url = "http://localhost/I-Project-5/I-Project-5/RegistreerActie.php";
+    $url = "RegistreerActie.php";
     $name = "page";
     $value = "Wijzigen";
     $newUrl = $url . "?$name=$value";

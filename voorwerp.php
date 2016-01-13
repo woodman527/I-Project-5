@@ -35,7 +35,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 
     while( $voorwerp = sqlsrv_fetch_array($resultaatArt, SQLSRV_FETCH_ASSOC)) {
 
-      $url = "http://localhost/I-Project-5/I-Project-5/voorwerp.php";
+      $url = "voorwerp.php";
       $name = "Voorwerp";
       $value = $voorwerp['VOORWERPNUMMER'];
       $newUrl = $url . "?$name=$value";

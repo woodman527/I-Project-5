@@ -81,13 +81,13 @@
                {
 
                 if($_SESSION['logged'] == true) {
-                 $url = "http://localhost/I-Project-5/I-Project-5/voorwerp.php";
+                 $url = "voorwerp.php";
                  $name = "Voorwerp";
                  $value = $voorwerp['VOORWERPNUMMER'];
                  $newUrl = $url . "?$name=$value";
 }
                  else {
-                   $url = "http://localhost/I-Project-5/I-Project-5/ProductOverzicht.php";
+                   $url = "ProductOverzicht.php";
                    $name = "productoverzicht";
                    $value = $rubrieknummer;
                    $newUrl = $url . "?$name=$value";
