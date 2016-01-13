@@ -49,6 +49,8 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 
         $bodbedrag = $_POST['inputbod'];
         $huidighoogstebod = $voorwerp['HIGH'];
+          //$tijd = date("h:i");
+          //$datum = date("Y-M-D");
         if($huidighoogstebod == NULL) {
           $huidighoogstebod = $voorwerp['STARTPRIJS'];
         }
@@ -72,6 +74,8 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
         else {
           $soortuser = 'koper';
         }
+          //$tijd = date("h:i");
+          //$datum = date("Y-M-D");
         $comment = $_POST['feedbacktext'];
         $plaatsfeedback = "INSERT INTO FEEDBACK(COMMENTAAR, TIJDSTIP, DAG, FEEDBACKSOORT, SOORTGEBRUIKER, VOORWERPNUMMER) VALUES('$comment', '12:00:00', '02-02-2015', 'positief', '$soortuser', '$voorwerpnummer')";
         if (database_query($plaatsfeedback, null))  {
