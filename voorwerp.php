@@ -40,12 +40,14 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
       $value = $voorwerp['VOORWERPNUMMER'];
       $newUrl = $url . "?$name=$value";
 
+      $voorwerpnummer = $voorwerp['VOORWERPNUMMER'];
+      $verkoper = $voorwerp['VERKOPER'];
+
       if(isset($_POST['inputbod'])) {
 
 
 
         $bodbedrag = $_POST['inputbod'];
-        $voorwerpnummer = $voorwerp['VOORWERPNUMMER'];
         $huidighoogstebod = $voorwerp['HIGH'];
         if($huidighoogstebod == NULL) {
           $huidighoogstebod = $voorwerp['STARTPRIJS'];
@@ -62,6 +64,23 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                echo 'error';
              }
            }
+      }
+      if(isset($_POST['feedbacktext'])) {
+        if($_SESSION['username'] == $verkoper) {
+          $soortuser = 'verkoper';
+        }
+        else {
+          $soortuser = 'koper';
+        }
+        $comment = $_POST['feedbacktext'];
+        $plaatsfeedback = "INSERT INTO FEEDBACK(COMMENTAAR, TIJDSTIP, DAG, FEEDBACKSOORT, SOORTGEBRUIKER, VOORWERPNUMMER) VALUES('$comment', '12:00:00', '02-02-2015', 'positief', '$soortuser', '$voorwerpnummer')";
+        if (database_query($plaatsfeedback, null))  {
+             echo 'gelukt';
+          }
+      else {
+             echo 'error';
+           }
+
       }
 
         ?>
@@ -110,16 +129,17 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                     echo '</div>';
                     echo '<br>';
                   }
-?>
+                  echo $voorwerp['VERKOPER']; echo $_SESSION['username'];
 
-                    <form method="POST" action=<?php $newUrl ?>>
-                    <div class="form-group">
-                        <label for="inputbod">Feedback</label>
-                        <input type="text" class="form-control" id="inputfeedback" placeholder="Uw feedback" name="feedbacktext">
-                        <button type="submit" class="btn btn-default" name="doFeedback">Enter</button>
-                    </div>
-                    </form>
-                <?php  }
+//  if($_SESSION['username'] == $voorwerp['VERKOPER'] OR $_SESSION['username'] == $voorwerp['KOPER']) {
+                    echo '<form method="POST"'; echo 'action=';  echo $newUrl; echo '>';
+                    echo '<div class="form-group">';
+                        echo '<label for="inputbod">Feedback</label>';
+                        echo '<input type="text"'; echo 'class="form-control"'; echo 'id="inputfeedback"';  echo 'placeholder="Uw feedback"';  echo 'name="feedbacktext">';
+                        echo '<button type="submit"'; echo 'class="btn btn-default"'; echo 'name="doFeedback">Enter</button>';
+                    echo '</div>';
+                    echo '</form>';
+                 //}
                   echo '</div>';
                   ?>
 
@@ -146,7 +166,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 <?php
 
     //else if(isset ($_POST['inputfeedback']))
-
+}
 
 
 
