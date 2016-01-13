@@ -43,6 +43,8 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
       $voorwerpnummer = $voorwerp['VOORWERPNUMMER'];
       $verkoper = $voorwerp['VERKOPER'];
 
+      if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
       if(isset($_POST['inputbod'])) {
 
 
@@ -86,6 +88,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
            }
 
       }
+    }
 
         ?>
         <div class="row">
