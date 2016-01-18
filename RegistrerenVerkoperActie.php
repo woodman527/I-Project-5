@@ -13,7 +13,7 @@
 <body>
   <?php
   database_connect();
-  
+
     $gebruikersnaam = $_SESSION['username'];
 
   if($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -33,9 +33,9 @@
     else {
       $rvasql = "INSERT INTO VERKOPER (GEBRUIKERSNAAM, BANK, BANKREKENING, CONTROLEOPTIE, CREDITCARD)
       VALUES ('$gebruikersnaam', '$Bank', '$IBAN', '$CtrOptie', '$Creditcard')";
-        $updvsql = "UPDATE
-              SET VERKOPER='wel';
-              WHERE GEBRUIKERSNAAM='$gebruikersnaam'";
+      $updvsql = "UPDATE
+                 SET VERKOPER='wel';
+                 WHERE GEBRUIKERSNAAM='$gebruikersnaam'";
       if (database_query($rvasql, null) AND database_query($updvsql, null)) {
         echo 'gelukt';
       }

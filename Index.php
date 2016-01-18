@@ -98,7 +98,7 @@
 
     echo '<div class="row">';
       echo  '<div class="veilingitem">';
-          echo '<h3>';  echo $voorwerp['TITEL']; echo '</h3>';
+          echo '<h3>'; echo 'Titel: '; echo $voorwerp['TITEL']; echo '</h3>';
 
           if ( $bresult === false)
           {
@@ -112,11 +112,11 @@
           echo ' <img src=" '; echo $filevoorwerp['FILENAAM']; echo ' "> ';
         }
         echo '</div>';
-            //<a class="button" href="voorbeeldvoorwerp.php">Bied Mee</a>
-            echo '<h4>'; echo $voorwerp['STARTPRIJS']; echo '</h4>';
-            echo '<h5>'; echo $voorwerp['HIGH']; echo '</h5>';
-            echo '<h6>'; echo $voorwerp['LOOPTIJDBEGINDAG']; echo '</h6>';
-            echo '<p>';  echo $voorwerp['BESCHRIJVING']; echo '</p>';
+            echo '<h4>'; echo 'Startprijs: '; echo $voorwerp['STARTPRIJS']; echo '</h4>';
+            echo '<h4>'; echo 'Huidige Bod: '; echo $voorwerp['HIGH']; echo '</h4>';
+            echo '<h6>'; echo 'BeginDatum: '; echo $voorwerp['LOOPTIJDBEGINDAG']; echo '</h6>';
+            //echo '<h7>'; echo 'EindDatum: '; echo $voorwerp['LOOPTIJDEINDEDAG']; echo '</h7>';
+            echo '<p>'; echo 'Beschrijving: ';  echo $voorwerp['BESCHRIJVING']; echo '</p>';
 
             echo '<a class="button"'; echo 'href="'; echo $newUrl;  echo '"><img src= "Images/calltoaction.png">'; echo '</a>';
 

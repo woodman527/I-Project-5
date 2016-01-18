@@ -91,6 +91,15 @@ if ($page == "Registreren") {
     else {
       $sql = "INSERT INTO GEBRUIKER (GEBRUIKERSNAAM, VRAAG, VOORNAAM, ACHTERNAAM, ADRESREGEL1, ADRESREGEL2, POSTCODE, PLAATSNAAM, LAND, GEBOORTEDAG, MAILBOX, WACHTWOORD, ANTWOORDTEKST, VERKOPER)
       VALUES ('$username', '$geheimevraag', '$voornaam', '$achternaam', '$adres', '$adres2', '$postcode', '$woonplaats', '$land', '$geboortedatum', '$email', '$password', '$antgeheimevraag', 'Niet')";
+
+      if (database_query($sql, null)) {
+        echo 'gelukt';
+        echo hash('adler32', $password);
+      }
+      else {
+        echo 'error';
+      }
+
     }
   }
 
@@ -139,20 +148,21 @@ if ($page == "Registreren") {
       $sql = "UPDATE GEBRUIKER
               SET GEBRUIKERSNAAM='$username', VOORNAAM='$voornaam', ACHTERNAAM='$achternaam', ADRESREGEL1='$adres', POSTCODE='$postcode', PLAATSNAAM='$woonplaats', LAND='$land', MAILBOX='$email', WACHTWOORD='$password'
               WHERE GEBRUIKERSNAAM='$currentuser'";
+
+              if (database_query($sql, null)) {
+                echo 'gelukt';
+                echo hash('adler32', $password);
+              }
+              else {
+                echo 'error';
+              }
+
             }
 
 
     }
 
 
-
-    if (database_query($sql, null)) {
-      echo 'gelukt';
-      echo hash('adler32', $password);
-    }
-    else {
-      echo 'error';
-    }
 
 
         database_disconnect();

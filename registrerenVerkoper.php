@@ -41,7 +41,7 @@
                     <!-- Iban -->
                     <label class="control-label" for="IBAN">IBAN (rekeningnummer):</label>
                     <div class="controls">
-                    <input type="text" id="IBAN" name="IBAN" placeholder="IBAN" class="form-control">
+                    <input type="text" id="IBAN" name="IBAN" placeholder="NLXXABCDXXXXXXXX" class="form-control">
                     </div>
                 </div>
             </div>

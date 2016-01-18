@@ -30,7 +30,7 @@
       <div class="col-md-2">
     <div class="control-group">
       <!-- titel -->
-      <label class="control-label"  for="titel"> Titel Voorwerp</label>
+      <label class="control-label"  for="titel"> Titel Voorwerp*</label>
       <div class="controls">
         <input type="text" id="titel" name="titel" placeholder="titel" class="form-control" enctype="multipart/form-data">
       </div>
@@ -38,7 +38,7 @@
 
     <div class="control-group">
       <!-- Rubriek -->
-      <label class="control-label" for="rubriek">Kies SubRubriek</label>
+      <label class="control-label" for="rubriek">Kies SubRubriek*</label>
       <div class="controls">
         <select class="form-control" name="rubriek">
 <?php  while($rubrieken = sqlsrv_fetch_array($resultRubrieken, SQLSRV_FETCH_ASSOC)){ ?>
@@ -64,7 +64,7 @@
 
     <div class="control-group">
       <!-- Startprijs-->
-      <label class="control-label" for="startprijs">Startprijs</label>
+      <label class="control-label" for="startprijs">Startprijs*</label>
       <div class="controls">
         <input type="text" id="startprijs" name="startprijs" placeholder="0.00" class="form-control">
       </div>
@@ -72,7 +72,7 @@
 
     <div class="control-group">
       <!-- Betalingswijze -->
-      <label class="control-label"  for="betalingswijze">Betalingswijze</label>
+      <label class="control-label"  for="betalingswijze">Betalingswijze*</label>
       <div class="controls">
         <select class="form-control" name="betalingswijze">
           <option value=""> Betalingswijze...</option>
@@ -86,14 +86,14 @@
 
     <div class="control-group">
       <!-- Voorwerplokatie -->
-      <label class="control-label" for="voorwerplokatie">Voorwerplokatie</label>
+      <label class="control-label" for="voorwerplokatie">Voorwerplokatie*</label>
       <div class="controls">
         <input type="text" id="voorwerplokatie" name="voorwerplokatie" placeholder="voorwerplokatie" class="form-control">
       </div>
 
       <div class="control-group">
       <!-- Looptijd-->
-      <label class="control-label" for="looptijd">Looptijd</label>
+      <label class="control-label" for="looptijd">Looptijd*</label>
       <div class="controls">
         <input type="text" id="looptijd" name="looptijd" placeholder="looptijd" class="form-control">
       </div>
@@ -101,7 +101,7 @@
     </div>
           <div class="control-group">
       <!-- Beschrijving-->
-      <label class="control-label" for="beschrijving">Beschrijving</label>
+      <label class="control-label" for="beschrijving">Beschrijving*</label>
       <div class="controls">
         <input type="text" id="beschrijving" name="beschrijving" placeholder="beschrijving" class="form-control-groot">
       </div>
@@ -128,7 +128,7 @@
 
 
     <div class="control-group">
-  <label class="control-label" for="land">Land:</label>
+  <label class="control-label" for="land">Land*</label>
   <select class="form-control" name="land">
 <option value="">Land...</option>
 <option value="Netherlands">Netherlands (Holland, Europe)</option>
@@ -383,6 +383,7 @@
 </div>
 
   <div class="col-md-3">
+    U bent verplicht vier afbeeldingen te uploaden
     <div class="control-group">
       <label class="control-label" for="Afbeelding 1">Afbeelding 1</label>
       <div class="controls">

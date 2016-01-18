@@ -29,7 +29,8 @@
     $gebruikresult = sqlsrv_query($conn, $gebruikersql);
     $gebruikresulttel = sqlsrv_query($conn, $gebruikertelsql);
     $gebruikerresultbod = sqlsrv_query($conn, $gebruikerbodsql);
-    $gebruikerverkoopresult = sqlsrv_query($conn, $gebruikerverkoopsql);
+
+
 
     if ( $gebruikresult === false)
     {
@@ -54,7 +55,15 @@
 </head>
 <div class="content">
 <?php  while( $gebruiker = sqlsrv_fetch_array( $gebruikresult, SQLSRV_FETCH_ASSOC))
-  { ?>
+  {
+    $soortgebruiker = $gebruiker['VERKOPER'];
+    if($soortgebruiker == 'Wel ') {
+      $url2 = 'Voorwerpveilen.php';
+    }
+    else {
+      $url2 = 'mijnprofiel.php';
+    }?>
+
 <div class="row">
     <div class="col-md-8">
         <h1>Profielinformatie</h1>
@@ -67,7 +76,7 @@
                     <div class="col-md-3">
                         <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Gebruikersnaam:</label>
+                            <label class="control-label"  for="username">Gebruikersnaam</label>
                             <div class="controls">
                                 <input type="text" value= <?php echo $gebruiker['GEBRUIKERSNAAM']; ?> id="username" name="username"  class="form-control">
                             </div>
@@ -75,7 +84,7 @@
 
                         <div class="control-group">
                             <!-- E-mail -->
-                            <label class="control-label" for="email">E-mail:</label>
+                            <label class="control-label" for="email">E-mail</label>
                             <div class="controls">
                                 <input type="text" id="email" name="email" value= <?php echo $gebruiker['MAILBOX']; ?> class="form-control">
                             </div>
@@ -83,7 +92,7 @@
 
                         <div class="control-group">
                             <!-- Password-->
-                            <label class="control-label" for="password">Wachtwoord:</label>
+                            <label class="control-label" for="password">Wachtwoord</label>
                             <div class="controls">
                                 <input type="text" id="password" name="password" value= <?php echo $gebruiker['WACHTWOORD']; ?> class="form-control">
                             </div>
@@ -425,20 +434,16 @@
                     <div class="col-md-3">
                         <div class="control-group">
                             <!-- Button -->
-                            <label class="control-label" for="Verkoopacc">Verkoopaccount aanmaken:</label>
+                            <label class="control-label" for="Verkoopacc">Verkoopaccount aanmaken</label>
                             <div class="controls">
                                 <button class="btn btn-success form-control"><a href="registrerenVerkoper.php">Aanmaken</a></button>
                             </div>
 
                             <div class="control-group">
                             <!-- Button -->
-                            <label class="control-label" for="Veilen">Aanmaken veiling:</label>
+                            <label class="control-label" for="Veilen">Aanmaken veiling</label>
                             <div class="controls">
-                              <?php if($gebruikerverkoopresult) { ?>
-                                <button class="btn btn-success form-control"><a href="VoorwerpVeilen.php">Aanmaken</a></button>
-                              <?php } else { ?>
-                                <button class="btn btn-success form-control"><a href="mijnprofiel.php">Aanmaken</a></button>
-                              <?php } ?>
+                                <button class="btn btn-success form-control"><a href=<?php echo $url2 ?> >Aanmaken</a></button>
                             </div>
                         </div>
                     </div>
@@ -455,9 +460,9 @@
           <?php while( $gebruikerbod = sqlsrv_fetch_array( $gebruikerresultbod, SQLSRV_FETCH_ASSOC)) { ?>
             <div class="veilingitem">
 <?php
-                echo '<h3>'; echo $gebruikerbod['TITEL']; echo '</h3>';
-                echo '<h4>'; echo $gebruikerbod['BESCHRIJVING']; echo '</h4>';
-                echo '<h5>'; echo $gebruikerbod['BODBEDRAG']; echo '</h5>';
+                echo '<h3>'; echo 'Titel: '; echo $gebruikerbod['TITEL']; echo '</h3>';
+                echo '<h4>'; echo 'Beschrijving: '; $gebruikerbod['BESCHRIJVING']; echo '</h4>';
+                echo '<h5>'; echo 'Bodbedrag: '; $gebruikerbod['BODBEDRAG']; echo '</h5>';
 
 
             echo '</div>';
