@@ -1,6 +1,8 @@
 <?php
     include_once('header.php');
     include_once('footer.php');
+    include_once('dbactions.php');
+    database_connect();
     $url = "http://localhost/I-Project-5/I-Project-5/RegistreerActie.php";
     $name = "page";
     $value = "Registreren";
@@ -440,4 +442,5 @@
 
     </div>
     </div>
+    <?php database_disconnect(); ?>
 </body>
