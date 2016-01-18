@@ -413,6 +413,7 @@
       <select class="form-control" name="geheimevraag" required>
         <?php  while($vragen = sqlsrv_fetch_array($vraagresult, SQLSRV_FETCH_ASSOC)){ ?>
                   <option value=<?php echo $vragen['TEKSTVRAAG'] ?>> <?php echo $vragen['TEKSTVRAAG'] ?> </option>
+                  <?php } ?>
               </select>
     </div>
 

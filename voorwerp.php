@@ -147,7 +147,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                         echo '<button type="submit"'; echo 'class="btn btn-default"'; echo 'name="doFeedback">Enter</button>';
                     echo '</div>';
                     echo '</form>';
-                 //}
+                 }
                   echo '</div>';
                   ?>
 
