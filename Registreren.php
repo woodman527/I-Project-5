@@ -5,6 +5,10 @@
     $name = "page";
     $value = "Registreren";
     $newUrl = $url . "?$name=$value";
+
+    $vraagsql = "SELECT *
+      	         FROM VRAAG";
+    $vraagresult = sqlsrv_query($conn, $vraagsql);
 ?>
 <head>
 <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -407,11 +411,8 @@
       <!-- E-mail -->
       <label class="control-label" for="geheimevraag">Geheime vraag*</label>
       <select class="form-control" name="geheimevraag" required>
-<option value="">Geheime vraag...</option>
-<option value="1">Wat is de meisjesnaam van je moeder?</option>
-<option value="2">Wat was de naam van je eerste huisdier?</option>
-<option value="3">Wat was je allereerste knuffel?</option>
-<option value="4">Wat was het huisnummer van je allereerste huis?</option>
+        <?php  while($vragen = sqlsrv_fetch_array($vraagresult, SQLSRV_FETCH_ASSOC)){ ?>
+                  <option value=<?php echo $vragen['TEKSTVRAAG'] ?>> <?php echo $vragen['TEKSTVRAAG'] ?> </option>
               </select>
     </div>
 

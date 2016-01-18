@@ -42,6 +42,8 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 
       $voorwerpnummer = $voorwerp['VOORWERPNUMMER'];
       $verkoper = $voorwerp['VERKOPER'];
+      $koper = $voorwerp['KOPER'];
+      $gebruiker = $_SESSION['username'];
 
       if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -51,16 +53,15 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 
         $bodbedrag = $_POST['inputbod'];
         $huidighoogstebod = $voorwerp['HIGH'];
-          //$tijd = date("h:i");
-          //$datum = date("Y-M-D");
+          //$tijd = date("h:i:s");
+          //$datum = date("Y-m-d");
         if($huidighoogstebod == NULL) {
           $huidighoogstebod = $voorwerp['STARTPRIJS'];
         }
-      echo $voorwerp['HIGH'];
         if (check_bod($bodbedrag, $huidighoogstebod)) {
 
-        //$gebruiker = $_SESSION['username'];
-          $plaatsbod = "INSERT INTO BOD(BODBEDRAG, VOORWERP, GEBRUIKER, BODDAG, BODTIJDSTIP) VALUES ('$bodbedrag', '$voorwerpnummer', 'Faalski', '2015-04-04', '23:12:22' )";
+
+          $plaatsbod = "INSERT INTO BOD(BODBEDRAG, VOORWERP, GEBRUIKER, BODDAG, BODTIJDSTIP) VALUES ('$bodbedrag', '$voorwerpnummer', '$gebruiker', '2015-04-04', '23:12:22' )";
           if (database_query($plaatsbod, null))  {
                echo 'gelukt';
             }
@@ -69,7 +70,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
              }
            }
       }
-      if(isset($_POST['feedbacktext'])) {
+      if(isset($_POST['inputfeedback'])) {
         if($_SESSION['username'] == $verkoper) {
           $soortuser = 'verkoper';
         }
@@ -78,7 +79,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
         }
           //$tijd = date("h:i");
           //$datum = date("Y-M-D");
-        $comment = $_POST['feedbacktext'];
+        $comment = $_POST['inputfeedback'];
         $plaatsfeedback = "INSERT INTO FEEDBACK(COMMENTAAR, TIJDSTIP, DAG, FEEDBACKSOORT, SOORTGEBRUIKER, VOORWERPNUMMER) VALUES('$comment', '12:00:00', '02-02-2015', 'positief', '$soortuser', '$voorwerpnummer')";
         if (database_query($plaatsfeedback, null))  {
              echo 'gelukt';
@@ -136,9 +137,9 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                     echo '</div>';
                     echo '<br>';
                   }
-                  echo $voorwerp['VERKOPER']; echo $_SESSION['username'];
 
-//  if($_SESSION['username'] == $voorwerp['VERKOPER'] OR $_SESSION['username'] == $voorwerp['KOPER']) {
+
+  if($gebruiker == $verkoper OR $gebruiker == $koper) {
                     echo '<form method="POST"'; echo 'action=';  echo $newUrl; echo '>';
                     echo '<div class="form-group">';
                         echo '<label for="inputbod">Feedback</label>';

@@ -50,7 +50,6 @@
                     echo '<a href="#"'; echo 'class="dropdown-toggle"'; echo 'data-toggle="dropdown">'; echo $rubrieken['RUBRIEKNAAM']; echo '<span class="caret"></span></a>';
                     echo '<ul class="dropdown-menu forAnimate" role="menu">';
 
-
                 $sqlRubrieken = "SELECT *
                                  FROM RUBRIEK";
                 $resultSubRubrieken = sqlsrv_query($conn, $sqlRubrieken);
@@ -61,8 +60,8 @@
                         {
 
                             $url = "ProductOverzicht.php";
-                            $name = "productoverzicht";                       // The parameter name
-                            $value = $rubrieken1['RUBRIEKNUMMER'];                     // The parameter value
+                            $name = "productoverzicht";                       
+                            $value = $rubrieken1['RUBRIEKNUMMER'];
                             $newUrl = $url . "?$name=$value";
                             echo '<li>'; echo '<a href="'; echo $newUrl; echo '">'; echo $rubrieken1['RUBRIEKNAAM']; echo '</a></li>';
                         }

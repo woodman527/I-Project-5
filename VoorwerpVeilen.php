@@ -38,7 +38,7 @@
 
     <div class="control-group">
       <!-- Rubriek -->
-      <label class="control-label" for="rubriek">Rubriek</label>
+      <label class="control-label" for="rubriek">Kies SubRubriek</label>
       <div class="controls">
         <select class="form-control" name="rubriek">
 <?php  while($rubrieken = sqlsrv_fetch_array($resultRubrieken, SQLSRV_FETCH_ASSOC)){ ?>
