@@ -54,7 +54,7 @@
       else {
         $orde = "TITEL ASC";
       }
-
+    echo '<div class="row">';
 
     if($conn) {
       $tsql = "SELECT VOORWERPNUMMER, TITEL, BESCHRIJVING, STARTPRIJS, LOOPTIJDBEGINDAG, LOOPTIJDEINDEDAG, MAX(BODBEDRAG) AS HIGH, COUNT(BODBEDRAG) AS AANTAL
@@ -111,7 +111,7 @@
 
 
 
-    echo '<div class="row">';
+
       echo  '<div class="veilingitem">';
           echo '<h3>';echo 'Titel: '; echo $voorwerp['TITEL']; echo $message; echo '</h3>';
 
@@ -138,15 +138,16 @@
 
 
 echo "</div>";
+
+}
 echo "</div>";
-}
 
 
-    echo "</div>";
 
 
 
 
 }
+  echo "</div>";
 ?>
 </body>
