@@ -3,7 +3,7 @@
     include_once('footer.php');
     include_once('dbactions.php');
     database_connect();
-    $url = "http://localhost/I-Project-5/I-Project-5/RegistreerActie.php";
+    $url = "RegistreerActie.php";
     $name = "page";
     $value = "Registreren";
     $newUrl = $url . "?$name=$value";
@@ -414,7 +414,7 @@
       <label class="control-label" for="geheimevraag">Geheime vraag*</label>
       <select class="form-control" name="geheimevraag" required>
         <?php  while($vragen = sqlsrv_fetch_array($vraagresult, SQLSRV_FETCH_ASSOC)){ ?>
-                  <option value=<?php echo $vragen['TEKSTVRAAG'] ?>> <?php echo $vragen['TEKSTVRAAG'] ?> </option>
+                  <option value=<?php echo $vragen['VRAAGNUMMER'] ?>> <?php echo $vragen['TEKSTVRAAG'] ?> </option>
                   <?php } ?>
               </select>
     </div>
