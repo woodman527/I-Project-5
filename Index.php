@@ -69,7 +69,7 @@
 
                $result = sqlsrv_query( $conn, $tsql);
 
-
+echo '<div class="row">';
 
 
                if ( $result === false)
@@ -107,7 +107,7 @@
 
 
 
-    echo '<div class="row">';
+
       echo  '<div class="veilingitem">';
           echo '<h3>'; echo 'Titel: '; echo $voorwerp['TITEL']; echo $message; echo '</h3>';
 
@@ -135,12 +135,13 @@
         echo "</div>";
 
 }
+
+
+
 echo "</div>";
-    echo "</div>";
-
-
-
 
 }
+
+    echo "</div>";
 ?>
 </body>
