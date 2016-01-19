@@ -146,7 +146,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                   }
 
 ECHO $gebruiker; echo $verkoper; echo $koper;
-  //if($gebruiker == $verkoper OR $gebruiker == $koper) {
+  if($_SESSION['username'] == $verkoper) {
                     echo '<form method="POST"'; echo 'action=';  echo $newUrl; echo '>';
                     echo '<div class="form-group">';
                         echo '<label for="inputbod">Feedback</label>';
@@ -154,7 +154,9 @@ ECHO $gebruiker; echo $verkoper; echo $koper;
                         echo '<button type="submit"'; echo 'class="btn btn-default"'; echo 'name="doFeedback">Enter</button>';
                     echo '</div>';
                     echo '</form>';
-                 //}
+                 } else {
+                   echo 'geen mogelijkheid tot feedback';
+                 }
                   echo '</div>';
                   ?>
 
