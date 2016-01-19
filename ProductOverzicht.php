@@ -137,10 +137,11 @@
             echo '<a class="button"'; echo 'href="'; echo $newUrl;  echo '"><img src= "Images/calltoaction.png">'; echo '</a>';
 
 
-        echo "</div>";
-
-}
 echo "</div>";
+echo "</div>";
+}
+
+
     echo "</div>";
 
 

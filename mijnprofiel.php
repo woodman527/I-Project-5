@@ -17,11 +17,12 @@
     $gebruikertelsql = "SELECT TELEFOON
                      FROM GEBRUIKERSTELEFOON
                      WHERE GEBRUIKER = '$username'";
-    $gebruikerbodsql = "SELECT BOD.BODBEDRAG, BOD.VOORWERP, VOORWERP.TITEL, VOORWERP.BESCHRIJVING
+    $gebruikerbodsql = "SELECT MAX(BOD.BODBEDRAG) AS HIGH, BOD.VOORWERP, VOORWERP.TITEL, VOORWERP.BESCHRIJVING
                      FROM BOD
-                     INNER JOIN VOORWERP
+                     LEFT JOIN VOORWERP
                      ON VOORWERP.VOORWERPNUMMER = BOD.VOORWERP
-                     WHERE BOD.GEBRUIKER = '$username'";
+                     WHERE BOD.GEBRUIKER = '$username'
+					           GROUP BY  BOD.VOORWERP, VOORWERP.TITEL, VOORWERP.BESCHRIJVING";
     $gebruikerverkoopsql = "SELECT GEBRUIKERSNAAM
                             FROM VERKOPER
                             WHERE GEBRUIKERSNAAM = '$username'";
@@ -457,12 +458,12 @@
     </div>
     <div class="row">
         <div class="col-md-10">
-          <?php while( $gebruikerbod = sqlsrv_fetch_array( $gebruikerresultbod, SQLSRV_FETCH_ASSOC)) { ?>
-            <div class="veilingitem">
-<?php
+          <?php while( $gebruikerbod = sqlsrv_fetch_array($gebruikerresultbod, SQLSRV_FETCH_ASSOC)) {
+            echo '<div class="veilingitem">';
+
                 echo '<h3>'; echo 'Titel: '; echo $gebruikerbod['TITEL']; echo '</h3>';
-                echo '<h4>'; echo 'Beschrijving: '; $gebruikerbod['BESCHRIJVING']; echo '</h4>';
-                echo '<h5>'; echo 'Bodbedrag: '; $gebruikerbod['BODBEDRAG']; echo '</h5>';
+                echo '<h4>'; echo 'Beschrijving: '; echo $gebruikerbod['BESCHRIJVING']; echo '</h4>';
+                echo '<h5>'; echo 'Bodbedrag: '; echo $gebruikerbod['HIGH']; echo '</h5>';
 
 
             echo '</div>';

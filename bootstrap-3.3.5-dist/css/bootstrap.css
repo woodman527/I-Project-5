@@ -1612,8 +1612,7 @@ pre code {
   margin-left: auto;
 }
 .row {
-  margin-right: -15px;
-  margin-left: -15px;
+  height: 270px;
 }
 .row1 {
   height: 50px;
@@ -6852,7 +6851,7 @@ button.close {
 .veilingitem{
   border-bottom: dotted black 2px;
   margin: 10px;
-  height: 300px;
+  height: 250px;
   padding: 5px;
   background-color: #8EE352;
   border-radius: 5px;
@@ -6864,10 +6863,11 @@ button.close {
   border-style: solid;
   border-color: red;
   border-width: 2px;
+  float: right;
 }
 
 .veilingitem p {
-  float: right;
+  float: left;
 }
 
 .Overons{
