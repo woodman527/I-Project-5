@@ -11,11 +11,10 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <?php
-  database_connect();
+<?php 
+  database_connect(); 
 
   $page = $_GET['page'];
-  echo $page;
   if ($_SESSION['logged']) {
     $currentuser = $_SESSION['username'];
 }
@@ -93,11 +92,10 @@ if ($page == "Registreren") {
       VALUES ('$username', '$geheimevraag', '$voornaam', '$achternaam', '$adres', '$adres2', '$postcode', '$woonplaats', '$land', '$geboortedatum', '$email', '$password', '$antgeheimevraag', 'Niet')";
 
       if (database_query($sql, null)) {
-        echo 'gelukt';
-        echo hash('adler32', $password);
+              echo 'gelukt';    
       }
       else {
-        echo 'error';
+              echo "error";
       }
 
     }
@@ -149,22 +147,21 @@ if ($page == "Registreren") {
               SET GEBRUIKERSNAAM='$username', VOORNAAM='$voornaam', ACHTERNAAM='$achternaam', ADRESREGEL1='$adres', POSTCODE='$postcode', PLAATSNAAM='$woonplaats', LAND='$land', MAILBOX='$email', WACHTWOORD='$password'
               WHERE GEBRUIKERSNAAM='$currentuser'";
 
+            
+            
               if (database_query($sql, null)) {
-                echo 'gelukt';
-                echo hash('adler32', $password);
+                       header('Location: mijnprofiel.php');
+                exit;
+                  
               }
               else {
-                echo 'error';
+                       header('Location: mijnprofiel.php');
+                exit;
+                  
               }
 
             }
-
-
     }
-
-
-
-
         database_disconnect();
-    ?>
+?>
   </body>

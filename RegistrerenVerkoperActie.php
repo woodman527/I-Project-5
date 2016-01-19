@@ -37,7 +37,7 @@
                  SET VERKOPER='wel';
                  WHERE GEBRUIKERSNAAM='$gebruikersnaam'";
       if (database_query($rvasql, null) AND database_query($updvsql, null)) {
-        echo 'gelukt';
+        header("mijnprofiel.php");
       }
       else {
         echo 'error';
