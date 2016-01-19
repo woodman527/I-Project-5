@@ -26,7 +26,6 @@
             <fieldset>
             <div class="control-group">
             <!-- Select opties -->
-            <label class="control-label">Selecteer keuze:</label>
             <select class="form-control" name="selecteeropties">
             <option value="TITEL ASC">Titel oplopend</option>
             <option value="TITEL DESC">Titel aflopend</option>
@@ -38,9 +37,11 @@
             </select>
 
           </div>
-
         </div>
-        <input type="submit" placeholder="refresh">
+                <div class="col-md-2">
+                   <button class="btn btn-success form-control" >verzenden</button>
+                </div>
+        </div>
       </div>
     </div>
 
