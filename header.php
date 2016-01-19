@@ -62,12 +62,6 @@
         <li><a href="OverOns.php">Over ons</a></li>
         <li><a href="mijnprofiel.php">Profiel</a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search" method="post" action="zoekresultaten.php">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Zoeken">
-        </div>
-        <button type="submit" class="btn btn-default" name="zoek">Zoek</button>
-      </form>
 
     </div><!-- /.navbar-collapse -->
 
