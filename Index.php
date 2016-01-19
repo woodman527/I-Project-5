@@ -4,7 +4,11 @@
     include_once ('sidebartest.php');
     include_once ('dbactions.php');
     database_connect();
-
+//feedback knop alleen laten zien aan koper/verkoper
+//productoverzicht/index opschonen
+//veiling gesloten weergeven
+//header locations voor actie pagina
+//login clear $_SESSION variabele
 
     ?>
     <head>
@@ -75,6 +79,13 @@
                while( $voorwerp = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC))
                {
 
+                 $looptijdeinde = $voorwerp['LOOPTIJDEINDEDAG'];
+                 $datum = date("Y-m-d");
+                 $message = "";
+                 if ($datum > $looptijdeinde){
+                   $message = "(veiling gesloten)";
+                 }
+
                 if($_SESSION['logged'] == true) {
                  $url = "voorwerp.php";
                  $name = "Voorwerp";
@@ -98,7 +109,7 @@
 
     echo '<div class="row">';
       echo  '<div class="veilingitem">';
-          echo '<h3>'; echo 'Titel: '; echo $voorwerp['TITEL']; echo '</h3>';
+          echo '<h3>'; echo 'Titel: '; echo $voorwerp['TITEL']; echo $message; echo '</h3>';
 
           if ( $bresult === false)
           {

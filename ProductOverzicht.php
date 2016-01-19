@@ -79,6 +79,12 @@
                }
                while( $voorwerp = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC))
                {
+                 $looptijdeinde = $voorwerp['LOOPTIJDEINDEDAG'];
+                 $datum = date("Y-m-d");
+                 $message = "";
+                 if ($datum > $looptijdeinde){
+                   $message = "(veiling gesloten)";
+                 }
 
                 if($_SESSION['logged'] == true) {
                  $url = "voorwerp.php";
@@ -106,7 +112,7 @@
 
     echo '<div class="row">';
       echo  '<div class="veilingitem">';
-          echo '<h3>';echo 'Titel: '; echo $voorwerp['TITEL']; echo '</h3>';
+          echo '<h3>';echo 'Titel: '; echo $voorwerp['TITEL']; echo $message; echo '</h3>';
 
           if ( $bresult === false)
           {
