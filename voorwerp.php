@@ -35,11 +35,27 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 
     while( $voorwerp = sqlsrv_fetch_array($resultaatArt, SQLSRV_FETCH_ASSOC)) {
 
+      $voorwerpnummer = $voorwerp['VOORWERPNUMMER'];
+      $verkoper = $voorwerp['VERKOPER'];
+      $koper = $voorwerp['KOPER'];
+      $gebruiker = $_SESSION['username'];
+      $maxbod = $voorwerp['HIGH'];
+
       $looptijdeinde = $voorwerp['LOOPTIJDEINDEDAG'];
       $datum = date("Y-m-d");
       $message = "";
       if ($datum > $looptijdeinde){
         $message = "(veiling gesloten)";
+        $kopersql = "UPDATE VOORWERP
+                     SET KOPER= (SELECT GEBRUIKER FROM BOD WHERE BODBEDRAG = $maxbod)
+                     WHERE VOORWERPNUMMER = $voorwerpnummer";
+        if (database_query($plaatsbod, null))  {
+            echo 'gelukt';
+        }
+        else {
+            echo 'error';
+        }
+       }
       }
 
       $url = "voorwerp.php";
@@ -47,10 +63,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
       $value = $voorwerp['VOORWERPNUMMER'];
       $newUrl = $url . "?$name=$value";
 
-      $voorwerpnummer = $voorwerp['VOORWERPNUMMER'];
-      $verkoper = $voorwerp['VERKOPER'];
-      $koper = $voorwerp['KOPER'];
-      $gebruiker = $_SESSION['username'];
+
 
       if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -182,7 +195,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 
 <?php
 
-    //else if(isset ($_POST['inputfeedback']))
+
 }
 
 
