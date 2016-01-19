@@ -35,6 +35,13 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 
     while( $voorwerp = sqlsrv_fetch_array($resultaatArt, SQLSRV_FETCH_ASSOC)) {
 
+      $looptijdeinde = $voorwerp['LOOPTIJDEINDEDAG'];
+      $datum = date("Y-m-d");
+      $message = "";
+      if ($datum > $looptijdeinde){
+        $message = "(veiling gesloten)";
+      }
+
       $url = "voorwerp.php";
       $name = "Voorwerp";
       $value = $voorwerp['VOORWERPNUMMER'];
@@ -110,7 +117,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
             ?>
 
 
-                    <div><h3> <?php echo $voorwerp['TITEL']?> </h3></div>
+                    <div><h3> <?php echo $voorwerp['TITEL']; echo $message;?> </h3></div>
             		<div><b>Locatie: </b><?php echo $voorwerp['PLAATSNAAM'] . " - " . $voorwerp['LAND']; ?></div>
                     <div><b>Begin veiling: </b><?php echo $voorwerp['LOOPTIJDBEGINDAG'] . " om " . $voorwerp['LOOPTIJDBEGINTIJDSTIP']; ?></div>
                     <div><b>Einde veiling: </b><?php echo $voorwerp['LOOPTIJDEINDETIJDSTIP'] . " om " . $voorwerp['LOOPTIJDEINDETIJDSTIP']; ?></div>
@@ -138,7 +145,7 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                     echo '<br>';
                   }
 
-
+ECHO $gebruiker; echo $verkoper; echo $koper;
   //if($gebruiker == $verkoper OR $gebruiker == $koper) {
                     echo '<form method="POST"'; echo 'action=';  echo $newUrl; echo '>';
                     echo '<div class="form-group">';
@@ -156,7 +163,10 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
 
 
             <div class="col-md-2">
-
+              <?php if($datum > $looptijdeinde) {
+                echo 'bieden niet meer mogelijk';
+              }
+              else { ?>
                 <h3>Huidig Bod:</h3>
                 <h3><?php echo "€".$voorwerp['HIGH']?></h3>
                 <form method="POST" action=<?php $newUrl ?>>
@@ -166,6 +176,8 @@ $voorwerpnummer = intval($_GET['Voorwerp']);
                         <button type="submit" class="btn btn-default" name="doBod">Bieden</button>
                     </div>
                 </form>
+            <?php  } ?>
+
           </div>
 
 
