@@ -41,6 +41,8 @@ database_connect();
 							while($name = sqlsrv_fetch_array($resultquery, SQLSRV_FETCH_ASSOC)) {
 
                                 $message = "Welcome ".implode($name);
+                               header('Location: mijnprofiel.php');
+                               
 							}
 						}
 						else if ($_SESSION['logged']  == false) {
@@ -61,7 +63,8 @@ database_connect();
 				$message = "You Have Successfully Logged Out";
 				$_SESSION['logged'] = false;
         $_SESSION['username'] = "";
-			}
+			 header('Location: index.php');
+            }
 
 
 		?>
