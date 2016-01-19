@@ -6,8 +6,8 @@
     database_connect();
 //feedback knop alleen laten zien aan koper/verkoper
 //productoverzicht/index opschonen
-//veiling gesloten weergeven
 //header locations voor actie pagina
+//Insert Koper
 //login clear $_SESSION variabele
 
     ?>
