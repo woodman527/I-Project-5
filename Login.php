@@ -60,6 +60,7 @@ database_connect();
 			if(isset($_POST['logoff'])) {
 				$message = "You Have Successfully Logged Out";
 				$_SESSION['logged'] = false;
+        $_SESSION['username'] = "";
 			}
 
 
